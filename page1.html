@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公告 - 学思学习讨论研究所</title>
+    <link rel="stylesheet" type="text/css" href="./seting.css">
+    <link rel="stylesheet" type="text/css" href="./page1.css">
+</head>
+<body>
+    <!-- 头部导航栏 -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <!-- 导航栏上半部分：Logo + 时间 + 天气 -->
+                <div class="navbar-top">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <img src="C:\Users\Wilber\Visual_Studio_Code\xssdrs\assets\10_5.png" alt="学思Logo">
+                        </div>
+                        <div class="logo-text">学思学习讨论研究所</div>
+                    </div>
+                    
+                    <!-- 实时时间显示 -->
+                    <div class="time-display" id="currentTime"></div>
+                    
+                    <!-- 天气组件 -->
+                    <iframe width="350" height="36" class="weather" src="https://i.tianqi.com/?c=code&a=getcode&id=41&icon=1" frameborder="0" scrolling="no"></iframe>
+                </div>
+                
+                <!-- 导航栏下半部分：菜单链接 -->
+                <div class="navbar-bottom">
+                    <ul class="nav-links">
+                        <li><a href="./index.html">首页</a></li>
+                        <li><a href="./page1.html" class="active">公告</a></li>
+                        <li><a href="#research">开放资源</a></li>
+                        <li><a href="#team">加入我们</a></li>
+                        <li><a href="#contact">联系我们</a></li>
+                    </ul>
+                    <div class="mobile-menu">☰</div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 公告页面主体内容 -->
+    <main class="container">
+        <!-- 公告头部 -->
+        <section class="notice-header">
+            <div class="container">
+                <h1 class="notice-title">学思学习讨论研究所公告</h1>
+                <p class="notice-desc">及时发布研究所最新动态、活动通知、资源更新、招募信息等内容，欢迎关注了解更多详情</p>
+            </div>
+        </section>
+
+        <!-- 公告筛选栏 -->
+        <section class="notice-filter">
+            <span class="filter-label">公告类型：</span>
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-type="all">全部公告</button>
+                <button class="filter-tab" data-type="notice">研究所通知</button>
+                <button class="filter-tab" data-type="event">活动公告</button>
+                <button class="filter-tab" data-type="resource">资源更新</button>
+                <button class="filter-tab" data-type="recruit">招募信息</button>
+            </div>
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="搜索公告关键词...">
+                <span class="search-icon">🔍</span>
+            </div>
+        </section>
+
+        <!-- 分页控件 -->
+        <section class="pagination">
+            <button class="page-btn disabled">←</button>
+            <button class="page-btn active">1</button>
+            <span>...</span>
+            <button class="page-btn">1</button>
+            <button class="page-btn">→</button>
+            <span class="page-jump">前往</span>
+            <input type="number" class="page-input" value="1" min="1" max="1">
+            <span class="page-jump">页</span>
+            <button class="page-go">确定</button>
+        </section>
+    </main>
+
+    <!-- 页脚（保持原有风格） -->
+    <footer style="margin-top: 80px;">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>学思学习讨论研究所</h3>
+                    <p>和平包容，共建未来。我们致力于打造开放、包容的技术交流平台，推动软件技术创新与发展。</p>
+                </div>
+                <div class="footer-column">
+                    <h3>快速链接</h3>
+                    <ul class="footer-links">
+                        <li><a href="./index.html">首页</a></li>
+                        <li><a href="./page1.html">公告</a></li>
+                        <li><a href="#research">开放资源</a></li>
+                        <li><a href="#team">加入我们</a></li>
+                        <li><a href="#contact">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>资源</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">研究报告</a></li>
+                        <li><a href="#">开源项目</a></li>
+                        <li><a href="#">技术文档</a></li>
+                        <li><a href="#">开发教程</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>订阅我们的通讯</h3>
+                    <p>获取最新研究动态和活动信息，与我们保持密切联系。</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="您的邮箱地址" required>
+                        </div>
+                        <button type="submit" class="btn">订阅</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 学思学习讨论研究所 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="./page1.js"></script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学思学习讨论研究所</title>
+    <link rel="stylesheet" type="text/css" href="./seting.css">
+</head>
+<body>
+    <!-- 音频播放器 -->
+    <audio id="audioPlayer" autoplay loop></audio>
+    
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <!-- 导航栏上半部分：Logo + 时间 + 天气 -->
+                <div class="navbar-top">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <img src=".\assets\10_5.png" alt="学思Logo">
+                        </div>
+                        <div class="logo-text">学思学习讨论研究所</div>
+                    </div>
+                    
+                    <!-- 实时时间显示 -->
+                    <div class="time-display" id="currentTime"></div>
+                    
+                    <!-- 天气组件 -->
+                    <iframe width="350" height="36" class="weather" src="https://i.tianqi.com/?c=code&a=getcode&id=41&icon=1" frameborder="0" scrolling="no"></iframe>
+                </div>
+                
+                <!-- 导航栏下半部分：菜单链接 -->
+                <div class="navbar-bottom">
+                    <ul class="nav-links">
+                        <li><a href="./index.html">首页</a></li>
+                        <li><a href="./page1.html">公告</a></li>
+                        <li><a href="#research">开放资源</a></li>
+                        <li><a href="#team">加入我们</a></li>
+                        <li><a href="#contact">联系我们</a></li>
+                    </ul>
+                    <div class="mobile-menu">☰</div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 轮播图区域 -->
+    <section class="slideshow-section">
+        <div class="container">
+            <div class="slideshow-container">
+                <div class="slideshow">
+                    <a href="https://news.un.org/zh/news/region/global" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/新闻背景.jpeg" alt="联合国新闻" title="全球 | 联合国新闻">
+                    </a>
+                    <a href="https://www.bilibili.com" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/bilibili.png" alt="哔哩哔哩" title="哔哩哔哩 | bilibili">
+                    </a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/github.png" alt="GitHub" title="GitHub">
+                    </a>
+                    <a href="https://www.csdn.net" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/CSDN.png" alt="CSDN" title="CSDN">
+                    </a>
+                    <a href="https://thegameawards.com" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/TGA.png" alt="TGA2025" title="The Game Awards 2025">
+                    </a>
+                </div>
+                <!-- 轮播图指示器 -->
+                <div class="slide-indicators">
+                    <div class="slide-indicator active" data-index="0"></div>
+                    <div class="slide-indicator" data-index="1"></div>
+                    <div class="slide-indicator" data-index="2"></div>
+                    <div class="slide-indicator" data-index="3"></div>
+                    <div class="slide-indicator" data-index="4"></div>
+                </div>
+                <!-- 轮播图箭头 -->
+                <button class="slide-arrow slide-prev">←</button>
+                <button class="slide-arrow slide-next">→</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 英雄区域 -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>学思学习讨论研究所</h1>
+            <p>开放包容，共建未来</p>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">关于我们</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>学思学习讨论研究所成立于2025年，是一个专注于编写实用工具与软件、开放资源的研究机构。我们始终秉承包容与开放的原则。</p>
+                    <p>我们通过深入研究软件实现与应用过程，开发创新的应用与实现方法，构建良好的程序与应用。</p>
+                    <p>研究所汇聚了使用各类编程语言的学生，通过合作，共同完成项目建设和软件开发。我们欢迎每一位有热情、有想法的开发者加入，一起创造更有价值的作品。</p>
+                    <a href="#contact" class="btn">加入我们</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 研究领域 -->
+    <section class="research-areas" id="research">
+        <div class="container">
+            <h2 class="section-title">研究领域</h2>
+            <div class="areas-grid">
+                <div class="area-card">
+                    <div class="area-icon">📚</div>
+                    <h3>编写实用工具与软件</h3>
+                    <p>研究开源软件源代码，进行优化与改良，搭建自己的成果。专注于开发高效、易用、解决实际问题的各类工具软件，提升工作与学习效率。</p>
+                </div>
+                <div class="area-card">
+                    <div class="area-icon">💡</div>
+                    <h3>开发创新的应用与实现方法</h3>
+                    <p>开发基于不同编程语言实现的程序，满足不同编程语言的开发者的需求。探索前沿技术应用，创新软件开发模式与实现路径。</p>
+                </div>
+                <div class="area-card">
+                    <div class="area-icon">🌐</div>
+                    <h3>开放资源</h3>
+                    <p>开放良好的资源，推荐优秀的应用程序。分享技术文档、源代码、开发经验，促进技术交流与知识共享，推动行业共同发展。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 团队介绍 -->
+    <section class="team-section" id="team">
+        <div class="container">
+            <h2 class="section-title">团队介绍</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://avatars.githubusercontent.com/u/210853447?v=4" alt="wilber-20130410">
+                    </div>
+                    <h3 class="member-name">wilber-20130410</h3>
+                    <p class="member-role">所长</p>
+                    <p class="member-desc">学生，曾获得各种编程比赛奖项，擅长Python编程，负责项目整体规划与技术选型。</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://avatars.githubusercontent.com/u/204565416?v=4" alt="lambdaexec">
+                    </div>
+                    <h3 class="member-name">lambdaexec</h3>
+                    <p class="member-role">副所长</p>
+                    <p class="member-desc">学生，精通C++编程，专注于恶意软件的编写。</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://avatars.githubusercontent.com/u/238982804?v=4" alt="lifeflow-04">
+                    </div>
+                    <h3 class="member-name">lifeflow-04</h3>
+                    <p class="member-role">研究员,网站开发者与运维人员</p>
+                    <p class="member-desc">学生，曾获得各种编程比赛奖项，擅长HTML、Javascript、CSS开发，同时负责网站运维与音乐创作，使用Electron开发跨平台应用。</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://avatars.githubusercontent.com/u/233557751?v=4" alt="xzhBruce">
+                    </div>
+                    <h3 class="member-name">xzhBruce</h3>
+                    <p class="member-role">研究员，网站运维人员</p>
+                    <p class="member-desc">学生，曾获得各种编程比赛奖项，负责网站安全与运维工作。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>学思学习讨论研究所</h3>
+                    <p>开放包容，共建未来。我们致力于打造开放、包容的技术交流平台，推动软件技术创新与发展。</p>
+                </div>
+                <div class="footer-column">
+                    <h3>快速链接</h3>
+                    <ul class="footer-links">
+                        <li><a href="./index.html">首页</a></li>
+                        <li><a href="./page1.html">公告</a></li>
+                        <li><a href="#">开放资源</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>资源</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">研究报告</a></li>
+                        <li><a href="#">开源项目</a></li>
+                        <li><a href="#">技术文档</a></li>
+                        <li><a href="#">开发教程</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>订阅我们的通讯</h3>
+                    <p>获取最新研究动态和活动信息，与我们保持密切联系。</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="您的邮箱地址" required>
+                        </div>
+                        <button type="submit" class="btn">订阅</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 学思学习讨论研究所 版权所有</p>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="./index.js"></script>
+</body>
+</html>
