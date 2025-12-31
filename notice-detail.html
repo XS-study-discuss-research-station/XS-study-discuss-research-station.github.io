@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>公告 - 学思学习讨论研究所</title>
+    <title>公告详情 - 学思学习讨论研究所</title>
     <link rel="stylesheet" type="text/css" href="./seting.css">
-    <link rel="stylesheet" type="text/css" href="./page1.css">
+    <link rel="stylesheet" type="text/css" href="./notic-detail.css">
+    <!-- 引入 Markdown 解析库 -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- 引入代码高亮库 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
 </head>
 <body>
     <!-- 头部导航栏 -->
@@ -16,7 +21,7 @@
                 <div class="navbar-top">
                     <div class="logo">
                         <div class="logo-icon">
-                            <img src=".\assets\10_5.png" alt="学思Logo">
+                            <img src="./assets/10_5.png" alt="学思Logo">
                         </div>
                         <div class="logo-text">学思学习讨论研究所</div>
                     </div>
@@ -43,64 +48,62 @@
         </div>
     </header>
 
-    <!-- 公告页面主体内容 -->
+    <!-- 主体内容 -->
     <main class="container">
-        <!-- 公告头部 -->
-        <section class="notice-header">
-            <div class="container">
-                <h1 class="notice-title">学思学习讨论研究所公告</h1>
-                <p class="notice-desc">及时发布研究所最新动态、活动通知、资源更新、招募信息等内容，欢迎关注了解更多详情</p>
-            </div>
-        </section>
+        <!-- 返回公告列表按钮 -->
+        <a href="./page1.html" class="back-button">
+            <i>←</i> 返回公告列表
+        </a>
 
-        <!-- 公告筛选栏 -->
-        <section class="notice-filter">
-            <span class="filter-label">公告类型：</span>
-            <div class="filter-tabs">
-                <button class="filter-tab active" data-type="all">全部公告</button>
-                <button class="filter-tab" data-type="notice">研究所通知</button>
-                <button class="filter-tab" data-type="event">活动公告</button>
-                <button class="filter-tab" data-type="resource">资源更新</button>
-                <button class="filter-tab" data-type="recruit">招募信息</button>
+        <!-- 公告详情容器 -->
+        <div class="notice-detail-container">
+            <!-- 加载状态（默认显示） -->
+            <div class="loading" id="loading">
+                <div class="loading-spinner"></div>
+                <p>正在加载公告内容...</p>
             </div>
-            <div class="search-box">
-                <input type="text" class="search-input" placeholder="搜索公告关键词...">
-                <span class="search-icon">🔍</span>
+
+            <!-- 错误提示（加载失败时显示） -->
+            <div class="error" id="error" style="display: none;">
+                <div class="error-icon">❌</div>
+                <p>公告加载失败，请稍后重试</p>
+                <button class="btn" style="margin-top: 20px;" onclick="loadMarkdownFile()">重新加载</button>
             </div>
-        </section>
-        <section class="notice-list">
-            <!-- 置顶公告 -->
-            <article class="notice-card top" data-type="notice">
-                <div class="notice-img">
-                    <img src="./assets/notices/1.jpg" alt="关于组织网站开通的公告（学思学习讨论研究所[2025]01号）">
-                </div>
-                <div class="notice-content">
+
+            <!-- 公告内容（加载成功后显示） -->
+            <div id="notice-content" style="display: none;">
+                <!-- 公告头部信息 -->
+                <div class="notice-header">
                     <div class="notice-meta">
-                        <span class="notice-type recruit">研究所通知</span>
-                        <span class="notice-date">2025-11-08</span>
-                        <span class="notice-view">阅读 none</span>
+                        <span class="notice-type" id="notice-type">研究所通知</span>
+                        <span id="notice-date">2025-01-01</span>
+                        <span id="notice-views">阅读 1000+</span>
                     </div>
-                    <h3 class="notice-card-title">关于组织网站开通的公告（学思学习讨论研究所[2025]01号）</h3>
-                    <p class="notice-excerpt">经过开发人员几周的辛苦工作，本组织网站成功于北京时间2025年11月8日星期六上线，在此表示热烈祝贺！...</p>
-                    <a href="notice-detail.html?id=1" class="read-more">查看详情</a>
+                    <h1 class="notice-title" id="notice-title">公告标题</h1>
+                    <div class="notice-tags" id="notice-tags">
+                        <!-- 标签将通过JS动态添加 -->
+                    </div>
+                    <!-- 公告封面图（可选） -->
+                    <img src="" alt="公告封面" class="notice-cover" id="notice-cover" style="display: none;">
                 </div>
-            </article>
-        </section>
-        <!-- 分页控件 -->
-        <section class="pagination">
-            <button class="page-btn disabled">←</button>
-            <button class="page-btn active">1</button>
-            <span>...</span>
-            <button class="page-btn">1</button>
-            <button class="page-btn">→</button>
-            <span class="page-jump">前往</span>
-            <input type="number" class="page-input" value="1" min="1" max="1">
-            <span class="page-jump">页</span>
-            <button class="page-go">确定</button>
-        </section>
+
+                <!-- Markdown 内容显示区 -->
+                <div class="markdown-content" id="markdown-render">
+                    <!-- Markdown 渲染后的内容将显示在这里 -->
+                </div>
+
+                <!-- 附件下载区（可选） -->
+                <div class="notice-attachments" id="notice-attachments" style="display: none;">
+                    <h3 class="attachments-title">相关附件</h3>
+                    <div class="attachment-list" id="attachment-list">
+                        <!-- 附件将通过JS动态添加 -->
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <!-- 页脚（保持原有风格） -->
+    <!-- 页脚 -->
     <footer style="margin-top: 80px;">
         <div class="container">
             <div class="footer-content">
@@ -144,7 +147,6 @@
             </div>
         </div>
     </footer>
-
-    <script type="text/javascript" src="./page1.js"></script>
+    <script type="text/javascript" src="./notic-detail.js"></script>
 </body>
 </html>

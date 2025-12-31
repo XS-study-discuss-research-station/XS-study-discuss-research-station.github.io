@@ -7,15 +7,15 @@
 }
 
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --accent-color: #2980b9;
-    --light-color: #ecf0f1;
-    --dark-color: #2c3e50;
+    --primary-color: #8b0000; /* 深红色，传统新年红 */
+    --secondary-color: #daa520; /* 金色 */
+    --accent-color: #b8860b; /* 深金色 */
+    --light-color: #fff8dc; /* 米白色 */
+    --dark-color: #660000; /* 深红 */
     --text-color: #333;
-    --light-text: #f8f9fa;
-    --gray-color: #f5f7fa;
-    --shadow: 0 4px 12px rgba(0,0,0,0.08);
+    --light-text: #fff;
+    --gray-color: #fff5f5; /* 淡红色背景 */
+    --shadow: 0 4px 12px rgba(139, 0, 0, 0.1);
     --transition: all 0.3s ease;
 }
 
@@ -59,12 +59,11 @@ section {
     border-radius: 2px;
 }
 
-
 /* 按钮样式优化 */
 .btn {
     display: inline-block;
     padding: 12px 30px;
-    background: linear-gradient(45deg, rgb(48, 92, 235), rgb(65, 214, 252));
+    background: linear-gradient(45deg, #8b0000, #daa520);
     color: white;
     border: none;
     border-radius: 30px; /* 圆角优化 */
@@ -72,13 +71,13 @@ section {
     font-size: 1rem;
     transition: var(--transition);
     text-decoration: none;
-    box-shadow: 0 3px 10px rgba(48, 92, 235, 0.2);
+    box-shadow: 0 3px 10px rgba(139, 0, 0, 0.2);
     font-weight: 500;
 }
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(48, 92, 235, 0.3);
+    box-shadow: 0 3px 10px rgba(139, 0, 0, 0.2);
     filter: brightness(1.05);
 }
 
@@ -89,8 +88,8 @@ section {
 
 /* 导航栏优化 */
 header {
-    background: linear-gradient(45deg, rgb(48, 92, 235), rgb(65, 214, 252));
-    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    background: linear-gradient(45deg, #8b0000, #d40000);
+    box-shadow: 0 2px 15px rgba(139, 0, 0, 0.2);
     position: fixed;
     width: 100%;
     top: 0;
@@ -344,7 +343,7 @@ color: white;
 
 /* 英雄区域优化 */
 .hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+    background: linear-gradient(135deg, #8b0000 0%, #d40000 100%);
     color: white;
     padding: 100px 0 80px;
     text-align: center;
@@ -606,7 +605,7 @@ color: white;
 .contact-icon {
     width: 45px;
     height: 45px;
-    background: linear-gradient(45deg, rgb(48, 92, 235), rgb(65, 214, 252));
+    background: linear-gradient(45deg, #8b0000, #d40000);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -614,7 +613,7 @@ color: white;
     margin-right: 18px;
     color: white;
     font-size: 1.2rem;
-    box-shadow: 0 4px 15px rgba(48, 92, 235, 0.2);
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.2);
     flex-shrink: 0;
 }
 
@@ -665,7 +664,7 @@ textarea.form-control {
 
 /* 页脚优化 */
 footer {
-    background: linear-gradient(45deg, rgb(48, 92, 235), rgb(65, 214, 252));
+    background: linear-gradient(45deg, #8b0000, #daa520);
     color: white;
     padding: 80px 0 40px;
     position: relative;
@@ -924,5 +923,115 @@ footer:before {
     
     .footer {
         padding: 60px 0 30px;
+    }
+}
+/* 新年装饰元素 */
+.new-year-decoration {
+    position: relative;
+    overflow: hidden;
+}
+
+/* 为所有section添加新年装饰 */
+section {
+    position: relative;
+}
+
+/* 英雄区域添加灯笼装饰 */
+.hero:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: 
+        radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.1) 2px, transparent 3px),
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 2px, transparent 3px),
+        radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.1) 2px, transparent 3px),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 2px, transparent 3px),
+        radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.1) 2px, transparent 3px);
+    background-size: 100px 100px;
+    opacity: 0.3;
+}
+
+/* 添加红色飘带效果 */
+.navbar:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        #ffd700 25%, 
+        #ff0000 50%, 
+        #ffd700 75%, 
+        transparent 100%);
+    animation: ribbonMove 10s linear infinite;
+}
+
+@keyframes ribbonMove {
+    0% { background-position: -200px 0; }
+    100% { background-position: 200px 0; }
+}
+
+/* 为按钮添加烟花效果 */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    animation: fireworks 1s ease-out infinite;
+}
+
+@keyframes fireworks {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0);
+        box-shadow: 
+            0 0 0 0 rgba(255, 215, 0, 0.7),
+            0 0 0 0 rgba(255, 0, 0, 0.5);
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2);
+        box-shadow: 
+            0 0 20px 10px rgba(255, 215, 0, 0),
+            0 0 40px 20px rgba(255, 0, 0, 0);
+    }
+}
+
+/* 鼠标悬停时的红包效果 */
+.nav-links a:hover {
+    text-shadow: 0 0 10px #ffd700;
+    color: #ffd700 !important;
+}
+
+/* 卡片悬浮时的金色光芒 */
+.area-card:hover,
+.team-member:hover,
+.notice-card:hover {
+    box-shadow: 0 15px 30px rgba(218, 165, 32, 0.2);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .navbar:before {
+        animation: ribbonMove 20s linear infinite;
     }
 }

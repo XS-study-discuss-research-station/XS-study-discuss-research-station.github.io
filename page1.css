@@ -88,7 +88,7 @@ body {
 }
 
 .filter-tab.active {
-    background: linear-gradient(45deg, rgb(48, 92, 235), rgb(65, 214, 252));
+    background: linear-gradient(45deg, #8b0000, #daa520);
     color: white;
     box-shadow: 0 3px 8px rgba(48, 92, 235, 0.2);
 }
@@ -138,7 +138,7 @@ body {
     overflow: hidden;
     box-shadow: 0 3px 15px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
-    border-top: 3px solid var(--secondary-color);
+    border-top: 3px solid var(--primary-color);
 }
 
 .notice-card:hover {
@@ -196,8 +196,8 @@ body {
     padding: 3px 10px;
     border-radius: 15px;
     font-size: 0.8rem;
-    background: #e8f4ff;
-    color: var(--secondary-color);
+    background: #ffebee;
+    color: var(--primary-color);
 }
 
 .notice-type.event {
@@ -288,7 +288,7 @@ body {
 }
 
 .page-btn.active {
-    background: linear-gradient(45deg, rgb(48, 92, 235), rgb(65, 214, 252));
+    background: linear-gradient(45deg, #8b0000, #daa520);
     color: white;
     border: none;
     box-shadow: 0 3px 8px rgba(48, 92, 235, 0.2);
@@ -318,7 +318,7 @@ body {
     padding: 0 20px;
     height: 42px;
     border-radius: 21px;
-    background: linear-gradient(45deg, rgb(48, 92, 235), rgb(65, 214, 252));
+    background: linear-gradient(45deg, #8b0000, #daa520);
     color: white;
     border: none;
     cursor: pointer;
