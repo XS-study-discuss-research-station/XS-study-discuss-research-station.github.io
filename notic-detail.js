@@ -83,7 +83,7 @@ function getNoticeId() {
 async function loadMarkdownFile() {
     const noticeId = getNoticeId();
     // 这里假设 MD 文件路径为 ./notices/[ID].md，可根据实际路径修改
-    const mdFilePath = `./notices/${noticeId}.md`;
+    const mdFilePath = 'https://github.com/XS-study-discuss-research-station/XS-study-discuss-research-station.github.io/edit/main/notices/%{noticeId}.md';
 
     // 显示加载状态
     document.getElementById('loading').style.display = 'block';
@@ -244,4 +244,5 @@ function getTypeName(type) {
 // 页面加载完成后加载 MD 文件
 window.addEventListener('DOMContentLoaded', function() {
     loadMarkdownFile();
+
 });
