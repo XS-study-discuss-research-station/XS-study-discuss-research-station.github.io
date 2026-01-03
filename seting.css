@@ -1034,4 +1034,16 @@ section {
     .navbar:before {
         animation: ribbonMove 20s linear infinite;
     }
+
+}
+.new-year-greeting {
+    font-size: 1.5rem;
+    color: #ffd700;
+    margin-top: 10px;
+    animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700; }
+    50% { text-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700; }
 }
