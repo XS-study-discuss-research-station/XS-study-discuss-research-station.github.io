@@ -1,4 +1,14 @@
-MIT License
+---
+icon: material/scale-balance
+---
+
+# MIT License
+
+/// warning | 警告
+
+任何人使用该项目的资源时均需遵守该项目的许可协议：[**MIT License**](https://github.com/xs-study-discuss-research-station/xs-study-discuss-research-station.github.io/blob/main/LICENSE)！
+
+///
 
 Copyright (c) 2025~2026 XS study discuss research station
 

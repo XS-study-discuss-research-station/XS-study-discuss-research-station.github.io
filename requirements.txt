@@ -1,0 +1,51 @@
+# core
+mkdocs
+mkdocs-material
+
+# markdown
+markdown
+pymdown-extensions
+pygments
+
+# git
+mkdocs-git-committers-plugin-2
+mkdocs-git-revision-date-localized-plugin
+mkdocs-git-authors-plugin
+
+# mkdocs plugins
+mkdocs-glightbox
+mkdocs-redirects
+mkdocs-statistics-plugin
+mkdocs-minify-plugin
+mkdocs-macros-plugin
+mkdocs-rss-plugin
+mkdocs-table-reader-plugin
+mkdocs-print-site-plugin
+mkdocs-markmap
+mkdocs_puml
+markdown-exec[ansi]
+
+# search
+jieba
+
+# versioning
+mike
+
+# code documentation
+mkdocstrings
+mkdocstrings-python
+mkdocs-autorefs
+mkdocs-gen-files
+mkdocs-literate-nav
+ruff
+
+# official griffe extensions
+griffe-autodocstringstyle
+griffe-inherited-docstrings
+griffe-public-redundant-aliases
+griffe-public-wildcard-imports
+griffe-pydantic
+griffe-runtime-objects
+griffe-sphinx
+griffe-typingdoc
+griffe-warnings-deprecated
