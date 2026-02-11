@@ -62,7 +62,7 @@ def bubble_sort(arr: list[int]) -> None:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
 ```
 
-{% set src_python = "" %}
+{% assign src_python = "" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_python }}){target="_black"}"
 
@@ -84,7 +84,7 @@ void bubbleSort(std::vector<int> &arr) {
 }
 ```
 
-{% set src_cpp = "" %}
+{% assign src_cpp = "" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_cpp }}){target="_black"}"
 
@@ -106,7 +106,7 @@ void bubbleSort(ArrayList<Integer> arr) {
 }
 ```
 
-{% set src_java = "" %}
+{% assign src_java = "" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_java }}){target="_black"}"
 
@@ -128,7 +128,7 @@ function bubbleSort(arr) {
 }
 ```
 
-{% set src_javascript = "" %}
+{% assign src_javascript = "" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_javascript }}){target="_black"}"
 
@@ -159,7 +159,7 @@ void swap(int arr[], int i, int j) {
 }
 ```
 
-{% set src_c = "" %}
+{% assign src_c = "" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_c }}){target="_black"}"
 

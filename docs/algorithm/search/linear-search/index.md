@@ -60,7 +60,7 @@ def linear_search(arr: list[int], target: int) -> int:
     return -1
 ```
 
-{% set src_python = "" %}
+{% assign src_python = "" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_python }}){target="_black"}"
 
@@ -81,7 +81,7 @@ int linearSearch(const std::vector<int> &arr, int target) {
 }
 ```
 
-{% set src_cpp = "" %}
+{% assign src_cpp = "" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_cpp }}){target="_black"}"
 
@@ -102,7 +102,7 @@ int linearSearch(ArrayList<Integer> arr, Integer target) {
 }
 ```
 
-{% set src_java = "" %}
+{% assign src_java = "" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_java }}){target="_black"}"
 
@@ -123,7 +123,7 @@ function linearSearch(arr, target) {
 }
 ```
 
-{% set src_javascript = "" %}
+{% assign src_javascript = "" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_javascript }}){target="_black"}"
 
@@ -144,7 +144,7 @@ int linearSearch(int arr[], int n, int target) {
 }
 ```
 
-{% set src_c = "" %}
+{% assign src_c = "" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_c }}){target="_black"}"
 

@@ -3,13 +3,7 @@ comments: true
 icon: fontawesome/solid/newspaper
 ---
 
-# 公告
-
-<div style="background: linear-gradient(to right, rgba(247, 120, 186, 0.5), rgba(88, 166, 255, 0.5))" class="grid cards" markdown>
-
--   :fontawesome-solid-thumbtack: [**关于组织网站开通的公告（学思学习讨论研究所[2025]01号）**](./pin_notices/index.md)
-
-</div>
+# 2025年公告
 
 <div class="grid cards" markdown>
 

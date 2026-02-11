@@ -18,7 +18,7 @@ icon: material/map-marker-path
 ```python
 ```
 
-{% set src_python = "" %}
+{% assign src_python = "" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_python }}){target="_black"}"
 
@@ -31,7 +31,7 @@ icon: material/map-marker-path
 ```cpp
 ```
 
-{% set src_cpp = "" %}
+{% assign src_cpp = "" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_cpp }}){target="_black"}"
 
@@ -44,7 +44,7 @@ icon: material/map-marker-path
 ```java
 ```
 
-{% set src_java = "" %}
+{% assign src_java = "" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_java }}){target="_black"}"
 
@@ -57,7 +57,7 @@ icon: material/map-marker-path
 ```javascript
 ```
 
-{% set src_javascript = "" %}
+{% assign src_javascript = "" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_javascript }}){target="_black"}"
 
@@ -70,7 +70,7 @@ icon: material/map-marker-path
 ```c
 ```
 
-{% set src_c = "" %}
+{% assign src_c = "" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_c }}){target="_black"}"
 
