@@ -1,11 +1,11 @@
 {#-
 This file was automatically generated - do not edit
 -#}
-{% assign class = "md-header" %}
+{% set class = "md-header" %}
 {% if "navigation.tabs.sticky" in features %}
-{% assign class = class ~ " md-header--shadow md-header--lifted" %}
+{% set class = class ~ " md-header--shadow md-header--lifted" %}
 {% elif "navigation.tabs" not in features %}
-{% assign class = class ~ " md-header--shadow" %}
+{% set class = class ~ " md-header--shadow" %}
 {% endif %}
 <header class="{{ class }}" data-md-component="header">
     <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
@@ -14,7 +14,7 @@ This file was automatically generated - do not edit
             {% include "partials/logo.html" %}
         </a>
         <label class="md-header__button md-icon" for="__drawer">
-            {% assign icon = config.theme.icon.menu or "material/menu" %}
+            {% set icon = config.theme.icon.menu or "material/menu" %}
             {% include ".icons/" ~ icon ~ ".svg" %}
         </label>
         <div class="md-header__title" data-md-component="header-title">
@@ -51,7 +51,7 @@ This file was automatically generated - do not edit
         {% endif %}
         {% if "material/search" in config.plugins %}
         <label class="md-header__button md-icon" for="__search">
-            {% assign icon = config.theme.icon.search or "material/magnify" %}
+            {% set icon = config.theme.icon.search or "material/magnify" %}
             {% include ".icons/" ~ icon ~ ".svg" %}
         </label>
         {% include "partials/search.html" %}

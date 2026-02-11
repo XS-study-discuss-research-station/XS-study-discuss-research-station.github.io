@@ -69,7 +69,7 @@ def binary_search(arr: list[int], target: int) -> int:
     return -1
 ```
 
-{% assign src_python = "" %}
+{% set src_python = "" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_python }}){target="_black"}"
 
@@ -96,7 +96,7 @@ int binarySearch(const std::vector<int> &arr, int target) {
 }
 ```
 
-{% assign src_cpp = "" %}
+{% set src_cpp = "" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_cpp }}){target="_black"}"
 
@@ -123,7 +123,7 @@ int binarySearch(ArrayList<Integer> arr, Integer target) {
 }
 ```
 
-{% assign src_java = "" %}
+{% set src_java = "" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_java }}){target="_black"}"
 
@@ -150,7 +150,7 @@ function binarySearch(arr, target) {
 }
 ```
 
-{% assign src_javascript = "" %}
+{% set src_javascript = "" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_javascript }}){target="_black"}"
 
@@ -177,7 +177,7 @@ int binarySearch(int arr[], int n, int target) {
 }
 ```
 
-{% assign src_c = "" %}
+{% set src_c = "" %}
 
 ??? example "可视化代码 [`🔍全屏查看`]({{ src_c }}){target="_black"}"
 
