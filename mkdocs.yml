@@ -11,7 +11,7 @@ remote_branch: gh-pages # GitHub Pages 远程分支名称
 remote_name: origin # 远程名称
 docs_dir: docs # 文档目录
 site_dir: site # 网站目录
-dev_addr: 192.168.1.112:8080 # 预览模式地址
+dev_addr: 127.0.0.1:8080 # 预览模式地址
 use_directory_urls: true # URL 使用目录名还是文件名
 strict: false # 警告级别，出现警告就终止程序
 
