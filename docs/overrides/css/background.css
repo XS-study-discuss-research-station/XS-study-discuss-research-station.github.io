@@ -1,6 +1,6 @@
 /*背景图片样式*/
 [data-md-color-scheme="slate"] .background {
-    background-image: url(/background.png); /* 改成你所要的图片 */
+    background-image: url(/background.jpg); /* 改成你所要的图片 */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -16,7 +16,7 @@
 }
 
 [data-md-color-scheme="default"] .background {
-    background-image: url(/background.png); /* 改成你所要的图片 */
+    background-image: url(/background.jpg); /* 改成你所要的图片 */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
