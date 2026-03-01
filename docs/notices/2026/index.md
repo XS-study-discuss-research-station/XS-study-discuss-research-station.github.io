@@ -7,7 +7,7 @@ icon: fontawesome/solid/newspaper
 
 <div class="grid cards" markdown>
 
--   :fontawesome-solid-newspaper: [**关于组织网站更新的说明公告（学思学习讨论研究所[2026]01号）**](./2026/1/index.md)
+-   :fontawesome-solid-newspaper: [**关于组织网站更新的说明公告（学思学习讨论研究所[2026]01号）**](./1/index.md)
 
     ---
 
