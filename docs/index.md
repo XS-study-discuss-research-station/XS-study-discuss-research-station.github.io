@@ -15,7 +15,27 @@ hide:
 
 <br/>
 
-<p align="center">开放包容，共建未来</p>
+<p align="center"><div class="grid cards" markdown>
+
+-   When "best" has no boundaries, effort turns into obligation.
+
+    ---
+
+    当“最好”永无止境，努力便沦为负累。
+
+</div></p>
+
+<br/>
+
+<p align="center"><div class="grid cards" markdown>
+
+-   学思学习讨论研究所恭祝全球妇女“国际劳动妇女节”快乐！！！
+
+    ---
+
+    今天是国际妇女节，又称“三八”妇女节，旨在纪念妇女在社会、政治和经济领域的贡献与权利。
+
+</div></p>
 
 <br/>
 
@@ -23,11 +43,11 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :fontawesome-solid-newspaper: [**关于本所网站更新的公告（学思学习讨论研究所[2025]02号）**](./2025/2/index.md)
+-   :fontawesome-solid-newspaper: [**关于组织网站更新的说明公告（学思学习讨论研究所[2026]01号）**](./notices/2026/1/index.md)
 
     ---
 
-    各位学思学习讨论研究所的成员们：本所网站将于2026年12月......
+    **先在这里预祝各位组织成员新春快乐，马年大吉！**2026年2月8......
 
 </div>
 
