@@ -15,7 +15,7 @@ hide:
 
 <br/>
 
-<p align="center"><div class="grid cards" markdown>
+<div class="grid cards" align="center" markdown>
 
 -   When "best" has no boundaries, effort turns into obligation.
 
@@ -23,11 +23,11 @@ hide:
 
     当“最好”永无止境，努力便沦为负累。
 
-</div></p>
+</div>
 
 <br/>
 
-<p align="center"><div class="grid cards" markdown>
+<div class="grid cards" align="center" markdown>
 
 -   学思学习讨论研究所恭祝全球妇女“国际劳动妇女节”快乐！！！
 
@@ -35,7 +35,7 @@ hide:
 
     今天是国际妇女节，又称“三八”妇女节，旨在纪念妇女在社会、政治和经济领域的贡献与权利。
 
-</div></p>
+</div>
 
 <br/>
 
