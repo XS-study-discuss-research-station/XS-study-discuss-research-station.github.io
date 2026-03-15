@@ -27,18 +27,6 @@ hide:
 
 <br/>
 
-<div class="grid cards" align="center" markdown>
-
--   学思学习讨论研究所恭祝全球妇女“国际劳动妇女节”快乐！！！
-
-    ---
-
-    今天是国际妇女节，又称“三八”妇女节，旨在纪念妇女在社会、政治和经济领域的贡献与权利。
-
-</div>
-
-<br/>
-
 <p>近日公告</p>
 
 <div class="grid cards" markdown>
