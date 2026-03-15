@@ -11,4 +11,5 @@ icon: fontawesome/regular/newspaper
 
 **三月**
 
+- 第 388 期：[测试是新的护城河](docs/issue-388.md)
 - 第 387 期：[你是领先的](./docs/issue-387.md)
