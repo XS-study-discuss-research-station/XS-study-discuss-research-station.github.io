@@ -82,4 +82,14 @@ icon: octicons/project-24
 
     All my(lambdaexec) malwares' source codes are all there :)
 
+-   <https://github.com/lambdaexec/bytebeat-archive>
+
+    ---
+
+    ![Stars](https://img.shields.io/github/stars/lambdaexec/bytebeat-archive?label=Stars&color=gold&logo=github&style=flat "星标")
+    ![Forks](https://img.shields.io/github/forks/lambdaexec/bytebeat-archive?label=Forks&logo=github&style=flat "复刻")
+    ![Watchers](https://img.shields.io/github/watchers/lambdaexec/bytebeat-archive?label=Watchers&logo=github&style=flat "关注")
+
+    my bytebeat library
+
 </div>

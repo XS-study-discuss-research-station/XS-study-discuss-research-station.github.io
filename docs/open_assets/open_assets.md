@@ -13,6 +13,12 @@ icon: material/folder-open
 
 <div class="grid cards" markdown>
 
+-   :fontawesome-regular-newspaper: [**科技爱好者周刊**](./weekly/index.md)
+
+    ---
+
+    记录每周值得分享的科技内容，[原刊](https://github.com/ruanyf/weekly)周五发布。
+
 -   :material-tools: [**设计模式**](./design-pattern/index.md)<small>（🚧施工中）</small>
 
     ---
@@ -36,11 +42,5 @@ icon: material/folder-open
     ---
 
     数值分析的终极悖论：计算的精确解往往是错的，而精心设计的近似解才是可靠的。
-
--   :material-folder-open: [**科技爱好者周刊**](./weekly/index.md)
-
-    ---
-
-    记录每周值得分享的科技内容，原刊周五发布。
 
 </div>

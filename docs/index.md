@@ -17,11 +17,11 @@ hide:
 
 <div class="grid cards" align="center" markdown>
 
--   When "best" has no boundaries, effort turns into obligation.
+-   “Deeply examine your own heart, and then you will discover that all miracles are within yourself.” — Bacon
 
     ---
 
-    当“最好”永无止境，努力便沦为负累。
+    “深窥自己的心，而后发觉一切的奇迹在你自己。” —— 培根
 
 </div>
 
@@ -78,6 +78,12 @@ hide:
 <p>开放与推荐资源</p>
 
 <div class="grid cards" markdown>
+
+-   :fontawesome-regular-newspaper: [**科技爱好者周刊**](./weekly/index.md)
+
+    ---
+
+    记录每周值得分享的科技内容，[原刊](https://github.com/ruanyf/weekly)周五发布。
 
 -   :material-tools: [**设计模式**](./design-pattern/index.md)<small>（🚧施工中）</small>
 

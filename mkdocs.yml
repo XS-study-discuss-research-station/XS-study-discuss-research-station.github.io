@@ -439,7 +439,12 @@ nav:
           - notices/2026/index.md
           - 1. 关于组织网站更新的说明公告_[2026]01号: notices/2026/1/index.md
   - 开放资源:
-      - open_assets.md
+      - open_assets/open_assets.md
+      - 科技爱好者周刊:
+          - weekly/index.md
+          - 第 389 期: weekly/docs/issue-389.md
+          - 第 388 期: weekly/docs/issue-388.md
+          - 第 387 期: weekly/docs/issue-387.md
       - 设计模式:
           - design-pattern/index.md
           - 创建型模式:
