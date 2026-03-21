@@ -1,5 +1,5 @@
 # core
-mkdocs
+properdocs
 mkdocs-material
 
 # markdown
