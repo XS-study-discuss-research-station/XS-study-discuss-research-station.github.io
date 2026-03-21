@@ -17,7 +17,7 @@ hide:
 
 <div class="grid cards" align="center" markdown>
 
--   “Deeply examine your own heart, and then you will discover that all miracles are within yourself.” — Bacon
+-   “Deep in your heart， and then realize that all the miracles in your own.” — Bacon
 
     ---
 
