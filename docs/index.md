@@ -17,11 +17,11 @@ hide:
 
 <div class="grid cards" align="center" markdown>
 
--   “Deep in your heart， and then realize that all the miracles in your own.” — Bacon
+-   “To accomplish great undertakings, one must start with small things. ” — Lenin
 
     ---
 
-    “深窥自己的心，而后发觉一切的奇迹在你自己。” —— 培根
+    “要成就一番大事业，必须从小事做起。” —— 列宁
 
 </div>
 
@@ -31,11 +31,11 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :fontawesome-solid-newspaper: [**关于组织网站变更的说明公告（学思学习讨论研究所[2026]02号）**](./notices/2026/2/index.md)
+-   :fontawesome-solid-newspaper: [**学思学习讨论研究所1周年生日快乐（学思学习讨论研究所[2026]03号）**](./2026/3/index.md)
 
     ---
 
-    2026年3月21日wilber-20130410提交[今日的网站更新](https://github.com/XS-study-discuss-research-station/XS-study-discuss-research-station.github.io/commit/c6c8d451e78758001a791fd469333efd06b69255)时发现Github......
+    今天是学思学习讨论研究所1周年生日，在此恭祝所有成员节日快乐！......
 
 </div>
 

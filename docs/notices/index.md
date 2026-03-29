@@ -7,11 +7,17 @@ icon: fontawesome/solid/newspaper
 
 <div style="background: linear-gradient(to right, rgba(247, 120, 186, 0.5), rgba(88, 166, 255, 0.5))" class="grid cards" markdown>
 
--   :fontawesome-solid-thumbtack: [**关于组织网站开通的公告（学思学习讨论研究所[2025]01号）**](./pin_notices/index.md)
+-   :fontawesome-solid-thumbtack: [**学思学习讨论研究所1周年生日快乐（学思学习讨论研究所[2026]03号）**](./2026/3/index.md)
 
 </div>
 
 <div class="grid cards" markdown>
+
+-   :fontawesome-solid-newspaper: [**学思学习讨论研究所1周年生日快乐（学思学习讨论研究所[2026]03号）**](./2026/3/index.md)
+
+    ---
+
+    今天是学思学习讨论研究所1周年生日，在此恭祝所有成员节日快乐！......
 
 -   :fontawesome-solid-newspaper: [**关于组织网站变更的说明公告（学思学习讨论研究所[2026]02号）**](./2026/2/index.md)
 
