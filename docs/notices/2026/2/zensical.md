@@ -93,9 +93,7 @@ Zensical brings a fresh, modern design that breaks out of the Materal Design aes
 
 <figure markdown>
 
-![Zensical](./zensical/screenshot.png#gh-light-mode-only)
-![Zensical](./zensical/screenshot-dark.png#gh-dark-mode-only)
-
+![Zensical](./screenshot.png)
 
   <figcaption markdown>Our public [roadmap], built with Zensical</figcaption>
 </figure>
@@ -118,8 +116,7 @@ Disco, our modular and blazing-fast client-side search engine, is exclusively av
 
 <figure markdown>
 
-![Zensical](./zensical/screenshot-search.png#gh-light-mode-only)
-![Zensical](./zensical/screenshot-search-dark.png#gh-dark-mode-only)
+![Zensical](./screenshot-search.png)
 
   <figcaption markdown>Disco on [zensical.org]</figcaption>
 </figure>

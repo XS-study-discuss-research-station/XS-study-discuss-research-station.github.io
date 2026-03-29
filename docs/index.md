@@ -85,13 +85,13 @@ hide:
 
     记录每周值得分享的科技内容，[原刊](https://github.com/ruanyf/weekly)周五发布。
 
--   :material-tools: [**设计模式**](./design-pattern/index.md)<small>（🚧施工中）</small>
+-   :material-tools: [**设计模式**](./open_assets/design-pattern/index.md)<small>（🚧施工中）</small>
 
     ---
 
     模式不是发明而是发现，它们凝结了开发者对抗软件复杂性的集体智慧。
 
--   :material-map-marker-path: [**算法**](./algorithm/index.md)<small>（🕓更新中）</small>
+-   :material-map-marker-path: [**算法**](./open_assets/algorithm/index.md)<small>（🕓更新中）</small>
 
     ---
 

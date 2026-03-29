@@ -293,7 +293,6 @@ extra_javascript:
   - js/canvas-nest.js # 背景图
   - js/background.js # 背景图
   - js/leave-enter.js # 离开页面或者进入页面的标题提示
-  - js/oml2d.js # 看板娘配置
   - https://unpkg.com/katex@latest/dist/katex.min.js # 数学表达式
   - https://unpkg.com/katex@latest/dist/contrib/auto-render.min.js # 自动渲染数学表达式
   - https://unpkg.com/tablesort@latest/dist/tablesort.min.js # 表格排序功能运行环境（默认文本类型）
@@ -305,6 +304,8 @@ extra_javascript:
   - https://unpkg.com/d3@latest/dist/d3.min.js # markmap 运行环境
   - https://unpkg.com/markmap-lib@latest/dist/browser/index.iife.js # markmap 运行环境
   - https://unpkg.com/markmap-view@latest/dist/browser/index.js # markmap 运行环境
+  - https://unpkg.com/oh-my-live2d@latest
+  - js/oml2d.js # 看板娘配置
 
 extra_css:
   - css/extra.css # 加载自定义的样式
@@ -443,73 +444,74 @@ nav:
               - 附件-Zensical: notices/2026/2/zensical.md
               - 附件-MkDocs的材料转换: notices/2026/2/transforming-material-for-mkdocs.md
   - 开放资源:
-      - open_assets/open_assets.md
+      - open_assets/index.md
       - 科技爱好者周刊:
-          - weekly/index.md
-          - 第 389 期: weekly/docs/issue-389.md
-          - 第 388 期: weekly/docs/issue-388.md
-          - 第 387 期: weekly/docs/issue-387.md
+          - open_assets/weekly/index.md
+          - 第 390 期: open_assets/weekly/docs/issue-390.md
+          - 第 389 期: open_assets/weekly/docs/issue-389.md
+          - 第 388 期: open_assets/weekly/docs/issue-388.md
+          - 第 387 期: open_assets/weekly/docs/issue-387.md
       - 设计模式:
-          - design-pattern/index.md
+          - open_assets/design-pattern/index.md
           - 创建型模式:
-              - design-pattern/creational-pattern/index.md
-              - 1. 工厂模式: design-pattern/creational-pattern/factory-pattern/index.md
-              - 2. 抽象工厂模式: design-pattern/creational-pattern/abstract-factory-pattern/index.md
-              - 3. 单例模式: design-pattern/creational-pattern/singleton-pattern/index.md
-              - 4. 建造者模式: design-pattern/creational-pattern/builder-pattern/index.md
-              - 5. 原型模式: design-pattern/creational-pattern/prototype-pattern/index.md
+              - open_assets/design-pattern/creational-pattern/index.md
+              - 1. 工厂模式: open_assets/design-pattern/creational-pattern/factory-pattern/index.md
+              - 2. 抽象工厂模式: open_assets/design-pattern/creational-pattern/abstract-factory-pattern/index.md
+              - 3. 单例模式: open_assets/design-pattern/creational-pattern/singleton-pattern/index.md
+              - 4. 建造者模式: open_assets/design-pattern/creational-pattern/builder-pattern/index.md
+              - 5. 原型模式: open_assets/design-pattern/creational-pattern/prototype-pattern/index.md
           - 结构型模式:
-              - design-pattern/structural-pattern/index.md
-              - 1. 适配器模式: design-pattern/structural-pattern/adapter-pattern/index.md
-              - 2. 桥接模式: design-pattern/structural-pattern/bridge-pattern/index.md
-              - 3. 组合模式: design-pattern/structural-pattern/composite-pattern/index.md
-              - 4. 装饰器模式: design-pattern/structural-pattern/decorator-pattern/index.md
-              - 5. 外观模式: design-pattern/structural-pattern/facade-pattern/index.md
-              - 6. 享元模式: design-pattern/structural-pattern/flyweight-pattern/index.md
-              - 7. 代理模式: design-pattern/structural-pattern/proxy-pattern/index.md
-              # - 8. 过滤器模式: design-pattern/structural-pattern/filter-pattern/index.md
+              - open_assets/design-pattern/structural-pattern/index.md
+              - 1. 适配器模式: open_assets/design-pattern/structural-pattern/adapter-pattern/index.md
+              - 2. 桥接模式: open_assets/design-pattern/structural-pattern/bridge-pattern/index.md
+              - 3. 组合模式: open_assets/design-pattern/structural-pattern/composite-pattern/index.md
+              - 4. 装饰器模式: open_assets/design-pattern/structural-pattern/decorator-pattern/index.md
+              - 5. 外观模式: open_assets/design-pattern/structural-pattern/facade-pattern/index.md
+              - 6. 享元模式: open_assets/design-pattern/structural-pattern/flyweight-pattern/index.md
+              - 7. 代理模式: open_assets/design-pattern/structural-pattern/proxy-pattern/index.md
+              # - 8. 过滤器模式: open_assets/design-pattern/structural-pattern/filter-pattern/index.md
           - 行为型模式:
-              - design-pattern/behavioral-pattern/index.md
-              - 1. 责任链模式: design-pattern/behavioral-pattern/chain-of-responsibility-pattern/index.md
-              - 2. 命令模式: design-pattern/behavioral-pattern/command-pattern/index.md
-              - 3. 解释器模式: design-pattern/behavioral-pattern/interpreter-pattern/index.md
-              - 4. 迭代器模式: design-pattern/behavioral-pattern/iterator-pattern/index.md
-              - 5. 中介者模式: design-pattern/behavioral-pattern/mediator-pattern/index.md
-              - 6. 备忘录模式: design-pattern/behavioral-pattern/memento-pattern/index.md
-              - 7. 观察者模式: design-pattern/behavioral-pattern/observer-pattern/index.md
-              - 8. 状态模式: design-pattern/behavioral-pattern/state-pattern/index.md
-              - 9. 策略模式: design-pattern/behavioral-pattern/strategy-pattern/index.md
-              - 10. 模板模式: design-pattern/behavioral-pattern/template-pattern/index.md
-              - 11. 访问者模式: design-pattern/behavioral-pattern/visitor-pattern/index.md
-              # - 12. 空对象模式: design-pattern/behavioral-pattern/Null-Object-pattern/index.md
+              - open_assets/design-pattern/behavioral-pattern/index.md
+              - 1. 责任链模式: open_assets/design-pattern/behavioral-pattern/chain-of-responsibility-pattern/index.md
+              - 2. 命令模式: open_assets/design-pattern/behavioral-pattern/command-pattern/index.md
+              - 3. 解释器模式: open_assets/design-pattern/behavioral-pattern/interpreter-pattern/index.md
+              - 4. 迭代器模式: open_assets/design-pattern/behavioral-pattern/iterator-pattern/index.md
+              - 5. 中介者模式: open_assets/design-pattern/behavioral-pattern/mediator-pattern/index.md
+              - 6. 备忘录模式: open_assets/design-pattern/behavioral-pattern/memento-pattern/index.md
+              - 7. 观察者模式: open_assets/design-pattern/behavioral-pattern/observer-pattern/index.md
+              - 8. 状态模式: open_assets/design-pattern/behavioral-pattern/state-pattern/index.md
+              - 9. 策略模式: open_assets/design-pattern/behavioral-pattern/strategy-pattern/index.md
+              - 10. 模板模式: open_assets/design-pattern/behavioral-pattern/template-pattern/index.md
+              - 11. 访问者模式: open_assets/design-pattern/behavioral-pattern/visitor-pattern/index.md
+              # - 12. 空对象模式: open_assets/design-pattern/behavioral-pattern/Null-Object-pattern/index.md
       - 数据结构:
-          - data-structure/index.md
+          - open_assets/data-structure/index.md
           - 线性结构:
-              - data-structure/linear-structure/index.md
-              - 1. 数组: data-structure/linear-structure/array/index.md
-              - 2. 链表: data-structure/linear-structure/linked-list/index.md
-              - 3. 栈: data-structure/linear-structure/stack/index.md
-              - 4. 队列: data-structure/linear-structure/queue/index.md
-              - 5. 双端队列: data-structure/linear-structure/deque/index.md
+              - open_assets/data-structure/linear-structure/index.md
+              - 1. 数组: open_assets/data-structure/linear-structure/array/index.md
+              - 2. 链表: open_assets/data-structure/linear-structure/linked-list/index.md
+              - 3. 栈: open_assets/data-structure/linear-structure/stack/index.md
+              - 4. 队列: open_assets/data-structure/linear-structure/queue/index.md
+              - 5. 双端队列: open_assets/data-structure/linear-structure/deque/index.md
           - 树形结构:
-              - data-structure/tree-structure/index.md
+              - open_assets/data-structure/tree-structure/index.md
           - 图形结构:
-              - data-structure/graph-structure/index.md
+              - open_assets/data-structure/graph-structure/index.md
           - 混合结构:
-              - data-structure/hybrid-structure/index.md
+              - open_assets/data-structure/hybrid-structure/index.md
       - 算法:
-          - algorithm/index.md
+          - open_assets/algorithm/index.md
           - 排序:
-              - algorithm/sort/index.md
-              - 1. 选择排序: algorithm/sort/selection-sort/index.md
-              - 2. 冒泡排序: algorithm/sort/bubble-sort/index.md
-              - 3. 插入排序: algorithm/sort/insertion-sort/index.md
+              - open_assets/algorithm/sort/index.md
+              - 1. 选择排序: open_assets/algorithm/sort/selection-sort/index.md
+              - 2. 冒泡排序: open_assets/algorithm/sort/bubble-sort/index.md
+              - 3. 插入排序: open_assets/algorithm/sort/insertion-sort/index.md
           - 搜索:
-              - algorithm/search/index.md
-              - 1. 线性搜索: algorithm/search/linear-search/index.md
-              - 2. 二分搜索: algorithm/search/binary-search/index.md
+              - open_assets/algorithm/search/index.md
+              - 1. 线性搜索: open_assets/algorithm/search/linear-search/index.md
+              - 2. 二分搜索: open_assets/algorithm/search/binary-search/index.md
       - 数值方法:
-          - numerical-method/index.md
+          - open_assets/numerical-method/index.md
   - 关于:
       - about/index.md
       - 关于网站: about/website.md

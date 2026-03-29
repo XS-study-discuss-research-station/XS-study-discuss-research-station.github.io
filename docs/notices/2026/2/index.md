@@ -41,7 +41,7 @@ icon: fontawesome/solid/newspaper
 
 经调查发现，网站所使用的Mkdocs社区传来了噩耗，维护者放弃了Mkdocs 2.0对Mkdocs 1.x版本的兼容支持。
 
-原代码维护者发表的博客原文翻译如下：
+原代码维护者发表的博客[原文](https://squidfunk.github.io/mkdocs-material/blog/2026/02/18/mkdocs-2.0/)翻译如下：
 
 > # MkDocs 2.0 对你的文档项目意味着什么
 > 
@@ -67,7 +67,7 @@ icon: fontawesome/solid/newspaper
 > 
 > ## MkDocs 2.0 中有哪些变化
 > 
-> 根据[官方公告]、已发布的[路线图]以及项目维护者的多项先前评论和声明，MkDocs 2.0 旨在从零开始重写项目以降低复杂性——同时也带来了一些重要的权衡：:
+> 根据[官方公告]、已发布的[路线图]以及项目维护者的多项先前评论和声明，MkDocs 2.0 旨在从零开始重写项目以降低复杂性——同时也带来了一些重要的权衡：
 > 
 > - __MkDocs 2.0 与 Material for MkDocs 不兼容__——如果你的文档是用 Material for MkDocs 构建的，它将无法在 MkDocs 2.0 上使用。Material for MkDocs 广泛使用 MkDocs 1.x 的模板和插件系统，而 MkDocs 2.0 引入的变更不向下兼容。
 > 

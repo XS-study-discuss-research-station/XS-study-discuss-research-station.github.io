@@ -1,0 +1,63 @@
+name: 我发现了一个BUG！
+
+description: "反馈一个问题，若问题有多个请依次开启，重复反馈将关闭，不提供解决非网页问题"
+
+labels: ["bug", "等待确认"]
+
+title: "[BUG]: "
+
+body:
+
+  - type: checkboxes
+    id: no-duplicate-issue
+    attributes:
+      label: "我确认没有重复的issue"
+      options:
+      - label: "我确认没有重复的issue."
+        required: true
+
+  - type: input
+    attributes:
+      label: 问题页面
+      description: 我们需要你提供当前页面的链接，你可以在搜索栏中Ctrl + A 再Ctrl + C 复制粘贴到这里
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: 出现问题时所使用的浏览器
+      description: 请填写你使用的浏览器名称，如：Chrome/Firefox/Edge
+    validations:
+      required: true
+
+  - type: dropdown
+    id: systemdevice
+    attributes:
+      label: 出现问题时所使用的系统
+      multiple: true
+      options:
+        - Android（包括安卓手机与平板、鸿蒙OS2~4）
+        - HarmonyOS 5.0+
+        - Windows
+        - iOS/iPadOS
+        - macOS
+        - Linux（各发行版的桌面环境）
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: 出现了什么问题？
+      description: 顺便告诉我们，您期望的行为是怎样的？推荐配上图片有助于定位问题。
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 重现步骤
+      description: 详细描述您出错前的操作步骤，推荐配上视频效果更好。
+    validations:
+      required: true
