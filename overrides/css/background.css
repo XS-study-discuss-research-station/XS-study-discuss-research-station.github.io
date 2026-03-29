@@ -10,7 +10,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    opacity: 0.04;
+    opacity: 0.1;
     pointer-events: none;
     /* filter: blur(2px); */
 }
@@ -26,7 +26,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    opacity: 0.06;
+    opacity: 0.1;
     pointer-events: none;
     /* filter: blur(2px); */
 }
