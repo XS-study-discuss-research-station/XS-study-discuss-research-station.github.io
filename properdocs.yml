@@ -290,7 +290,7 @@ extra_javascript:
   - js/katex.js # 数学表达式
   - js/thebe.js # Thebe 实时运行环境
   - js/tablesort.js # 表格排序功能
-  - js/canvas-nest.js # 背景图
+  # - js/canvas-nest.js # 背景图
   - js/background.js # 背景图
   - js/leave-enter.js # 离开页面或者进入页面的标题提示
   - https://unpkg.com/katex@latest/dist/katex.min.js # 数学表达式

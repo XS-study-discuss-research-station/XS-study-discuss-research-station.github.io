@@ -9,6 +9,10 @@ icon: fontawesome/regular/newspaper
 
 ## 2026
 
+**四月**
+
+- 第 391 期：[AI 的贫富分化](docs/issue-391.md)
+
 **三月**
 
 - 第 390 期：[没有语料，大模型就是智障](docs/issue-390.md)
