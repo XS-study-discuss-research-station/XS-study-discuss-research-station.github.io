@@ -448,10 +448,15 @@ nav:
       - open_assets/index.md
       - 科技爱好者周刊:
           - open_assets/weekly/index.md
+          - 第 391 期: open_assets/weekly/docs/issue-391.md
           - 第 390 期: open_assets/weekly/docs/issue-390.md
           - 第 389 期: open_assets/weekly/docs/issue-389.md
           - 第 388 期: open_assets/weekly/docs/issue-388.md
           - 第 387 期: open_assets/weekly/docs/issue-387.md
+      - 游戏资源:
+          - open_assets/game/index.md
+          - MC服务器: open_assets/game/mc/index.md
+          - Mindustry: open_assets/game/mindustry/index.md
       - 设计模式:
           - open_assets/design-pattern/index.md
           - 创建型模式:

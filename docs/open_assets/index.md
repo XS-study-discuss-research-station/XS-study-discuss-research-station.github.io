@@ -19,6 +19,12 @@ icon: material/folder-open
 
     记录每周值得分享的科技内容，[原刊](https://github.com/ruanyf/weekly)周五发布。
 
+-   :material-gamepad-square-outline: [游戏资源](./game/index.md)
+
+    ---
+
+    各种游戏资源。
+
 -   :material-tools: [**设计模式**](./design-pattern/index.md)<small>（🚧施工中）</small>
 
     ---
