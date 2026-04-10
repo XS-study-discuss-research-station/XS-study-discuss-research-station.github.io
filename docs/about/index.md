@@ -11,7 +11,6 @@ icon: material/information-variant
 
 ///
 <h1 align="center">乐于求知，勇于攀登</h1>
-<br/>
 <h1 align="center">开放包容，共建未来</h1>
 
 <div class="grid cards" markdown>
