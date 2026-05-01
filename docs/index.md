@@ -17,11 +17,21 @@ hide:
 
 <div class="grid cards" align="center" markdown>
 
--   “To accomplish great undertakings, one must start with small things. ” — Lenin
+-   恭祝全世界劳动人民五一国际劳动节快乐！
 
     ---
 
-    “要成就一番大事业，必须从小事做起。” —— 列宁
+    Wishing workers all over the world a happy International Workers' Day on May 1st!
+
+</div>
+
+<div class="grid cards" align="center" markdown>
+
+-   创造历史的劳动人民万岁!
+
+    ---
+
+    Long live the working people who create history!
 
 </div>
 
