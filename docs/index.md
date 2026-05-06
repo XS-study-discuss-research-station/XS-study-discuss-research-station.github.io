@@ -17,21 +17,11 @@ hide:
 
 <div class="grid cards" align="center" markdown>
 
--   恭祝全世界劳动人民五一国际劳动节快乐！
+-   "It is the mark of an educated mind to be able to entertain a thought without accepting it." - Aristotie
 
     ---
 
-    Wishing workers all over the world a happy International Workers' Day on May 1st!
-
-</div>
-
-<div class="grid cards" align="center" markdown>
-
--   创造历史的劳动人民万岁!
-
-    ---
-
-    Long live the working people who create history!
+    “思想成熟的标志是面对一种观点能容纳而不必接纳。” —— 亚里士多德
 
 </div>
 
