@@ -1,0 +1,346 @@
+# 科技爱好者周刊（第 408 期）：你需要知道的 AI 缓存知识
+
+这里记录每周值得分享的科技内容，周五发布。
+
+本杂志[开源](https://github.com/ruanyf/weekly)，欢迎[投稿](https://github.com/ruanyf/weekly/issues)。另有[《谁在招人》](https://github.com/ruanyf/weekly/issues/10950)服务，发布程序员招聘信息。合作请[邮件联系](mailto:yifeng.ruan@gmail.com)（yifeng.ruan@gmail.com）。
+
+## 封面图
+
+![](https://cdn.beekka.com/blogimg/asset/202608/bg2026081308.webp)
+
+浙江台州的椒江滨江公共空间生态绿廊，象征涟漪从水面蔓延，涌上岸边，堆积成丘。（[via](https://www.gooood.cn/en/ripples-becoming-everyday-ground-by-original-design-studio-tjad.htm)）
+
+## 你需要知道的 AI 缓存知识
+
+大模型的价格，主要是 Token 的输入价格和输出价格，这个很容易理解。
+
+但是，还有一项“输入 Token 的缓存命中价格”，这是什么东西？
+
+![](https://cdn.beekka.com/blogimg/asset/202608/bg2026081201.webp)
+
+上图是 DeepSeek V4 Flash 模型的[定价](https://api-docs.deepseek.com/zh-cn/quick_start/pricing/)，可以看到缓存命中的输入价格只有2分钱，足足是未命中的输入价格的五十分之一！
+
+为什么相差这些大？我们能不能充分利用缓存，来降低费用呢？
+
+我对于这些问题，以前也不是很了解，最近看了[一篇文章](https://blog.mempko.com/your-agentic-workflows-cache-keepalive-costs-8x-too-much-v2-the-interval-frontier/)，终于理清了思路，今天就来分享。
+
+**（1）模型输入的收费原因**
+
+大家知道，使用大模型的时候，需要先有提示词。
+
+大模型会将提示词分解成 Token，再将 Token 转成向量值，然后计算所有 Token 之间的注意力关系。
+
+这一步非常消耗算力，因此模型公司会对输入 Token 收费。<u>你的提示词越多，输入 Token 的费用就越高。</u>
+
+**（2）输入缓存的作用**
+
+对于多轮对话和长程任务，每一轮都需要把以前步骤的输入输出结果，提交给模型。
+
+我们可以想到，这些每一轮额外增加的提示词是不变的，以前都已经处理过了。模型完全不必要对这些“前缀”每次进行重复计算，只要把以前的计算结果缓存起来，下一次再取出来用就行了。
+
+这就是为什么需要缓存，它可以大大节省不必要的算力消耗，加快模型处理。
+
+这也是它便宜的原因，因为只要命中缓存，基本不消耗算力，收取的费用实际上是储存空间的费用。
+
+**（3）缓存的时间期限**
+
+缓存有时间期限，长期保存并无意义。如果一段时间没有用到这些缓存，服务器就会把缓存删除。
+
+根据[前面引用文章](https://blog.mempko.com/your-agentic-workflows-cache-keepalive-costs-8x-too-much-v2-the-interval-frontier/)的测试，各家公司的缓存保存时间不一样。
+
+- Anthropic：5分钟
+- DeepSeek：10分钟
+- OpenAI：10分钟～30分钟逐步失效
+- Google：1小时内逐步失效
+
+以 DeepSeek 为例，在10分钟以内，缓存就是有效的，命中缓存只收取2分钱。如果对话的间隔特别久，下一次输入跟上一次之间超过了10分钟，缓存就被删除了，模型收到上一轮的提示词，就不得不重新计算，收取的费用就变成了1元。
+
+**（4）保持缓存有效**
+
+由于缓存命中与未命中之间，有巨大的价差。用户的 AI Agent 工具往往会想办法，尽可能延长缓存的保存时间。
+
+当用户长时间不操作、也不退出的时候，大多数 AI Agent 会每隔30秒，自动向服务器发送一个请求，让缓存保存激活状态。
+
+有些模型有专门的缓存激活接口，还有一些没有。这时可以用笨办法，Agent 自动重复发送一次以前的提示词，确保缓存激活。
+
+不过，激活请求也会产生费用。每隔30秒发送一次，如果10分钟没有输入，就会发送20个激活请求。时间一长，费用也不低。
+
+前面说过了，现在各家模型的实际缓存期限，最短也有5分钟，因此30秒一次的激活请求，似乎频率太高了。所以，最新的建议是，可以改成每4分钟自动激活一次缓存。
+
+## 科技动态
+
+1、[带蓝牙识别的交通摄像头](https://www.404media.co/this-company-will-add-phone-airpod-and-smartwatch-trackers-to-license-plate-readers/)
+
+一家美国创业公司推出一种交通摄像头，不仅能识别车牌号，还能识别蓝牙设备。
+
+![](https://cdn.beekka.com/blogimg/asset/202606/bg2026062009.webp)
+
+公路上的交通摄像头，一般来说只能拍到车牌，不能识别谁在开车。
+
+这个新型摄像头就能解决这个问题。它还能捕捉蓝牙信号，从而将蓝牙设备的 MAC 地址跟车牌绑定，有助于推断谁在车上。
+
+此外，除了蓝牙，它还能捕捉钥匙卡和宠物芯片中的 RFID 标签，以及车内 WIFI 的 SSID，从而进一步增加推断的可靠性。
+
+2、[声波灭火](https://arstechnica.com/gadgets/2026/05/startup-says-sound-waves-can-replace-fire-sprinklers-experts-arent-so-sure/)
+
+灭火除了用水，还可以用声波。
+
+物理学已经证明，强烈的低频声波（30Hz～60Hz）可以用来灭火，原理是声波可以阻碍氧气流入，并加速热量散发。
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026050402.webp)
+
+一家美国创业公司，最近就制造了一个声波灭火装置，准备推广上市。他们成功演示了厨房灭火的场景。
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026050403.webp)
+
+只见喇叭对着灶头猛放低频声波，火就灭了。该公司希望该装置可以取代喷淋系统，以后着火时，头顶的喇叭放放声音就可以了。
+
+但是，它有几个缺点，可能难以推广。首先，喇叭的体积较大，否则声波强度不够，另外它必须离火源较近，因为声波会迅速衰减。这也造成它只能用于零星的火势，无法用于连片的大火。
+
+3、[没有舷窗的飞机](https://www.wsj.com/business/airlines/this-windowless-plane-is-vying-to-be-the-private-jet-of-the-future-2fdf184b?st=fHNiyn&mod=1440&user_id=66c4c9305d78644b3ac5df9c)
+
+一家美国的飞机制造商，推出新型的私人飞机，最大特点是没有舷窗（下图）。
+
+![](https://cdn.beekka.com/blogimg/asset/202510/bg2025100210.webp)
+
+它的机舱内部是一体封闭的，没有窗户。
+
+取而代之的是，连在一起的液晶显示屏，播放飞机外部的高分辨率摄像头拍到的景象。
+
+该公司表示，取消窗户可以让飞机更轻，外表更光滑，从而减少空气阻力和燃油消耗。而且，乘客不必探头，就能在座位上环顾整个高空，拥有飞机驾驶员的视野，而不是原来窗口的狭小视野。
+
+4、[最长的视线](https://earthlymission.com/longest-view-world/)
+
+科学家使用算法，确定了地球上最长的视线，即从一个地点可以看到另一个地点的最长距离。
+
+![](https://cdn.beekka.com/blogimg/asset/202602/bg2026021618.webp)
+
+那是从吉尔吉斯斯坦（靠近中国边境）的皮克丹科瓦峰向南眺望，可以清晰地看到中国昆仑山脉深处，距离长达530公里。
+
+一般来说，海拔越高、空气越通透，看的距离就越远。
+
+皮克丹科瓦峰海拔约6000米，向南正好是低洼的柴达木盆地沙漠，再远又是海拔6000米以上的昆仑山，因此，这两座相距几百公里的高山可以互相眺望。
+
+## 文章
+
+1、[常见的任务执行工具](https://hamvocke.com/blog/task-runners/)（英文）
+
+![](https://cdn.beekka.com/blogimg/asset/202608/bg2026081103.webp)
+
+命令行执行任务，可以选择不同的执行方式，比如自己写 Bash 脚本，或者用 make、just、mise 等任务执行工具。
+
+2、[如何用脚本将文件上传到 GitHub](https://island94.org/2026/08/programmatically-upload-attachments-to-github-issues-pull-requests-comments)（英文）
+
+![](https://cdn.beekka.com/blogimg/asset/202608/bg2026081106.webp)
+
+GitHub 允许用户上传文件到 issue 和 pull request，本文教你怎么在脚本里面上传。
+
+3、[Canvas 而不是 HTML](https://hivekit.io/blog/why-you-might-want-to-build-your-webapp-in-canvas-instead-of-html/)（英文）
+
+![](https://cdn.beekka.com/blogimg/asset/202608/bg2026081202.webp)
+
+很多复杂网页不使用 HTML，而使用 Canvas 呈现页面，用户看到的其实是一张图片。本文讨论 Canvas 页面的优缺点，以及何时适用。
+
+4、[我的服务器是一部手机](https://seg6.space/posts/phone-server/)（英文）
+
+![](https://cdn.beekka.com/blogimg/asset/202608/bg2026081203.webp)
+
+作者介绍怎么把自己的安卓手机作为 Linux 服务器（使用了 Termux）。
+
+> "（我的安卓手机有）八个 ARM 核心、8GB 内存、128GB 闪存、WiFi 6、5G 调制解调器，以及内置电池，所有这些都集成在一个我觉得性能过剩、闲置在抽屉里的 SoC 芯片上。而且我已经付过钱了。掸去灰尘，把玩了一会儿之后，我决定把这台手机改造成服务器。"
+
+5、[电梯的算法](https://john.fun/elevators)（英文）
+
+![](https://cdn.beekka.com/blogimg/asset/202608/bg2026080605.webp)
+
+本文介绍电梯的算法，写得比较简单，没有代码实例，但有动画，解释了这个问题的复杂性在哪里（如何缩短等待时间）。
+
+## 工具
+
+1、[Docker 沙箱](https://www.docker.com/products/docker-sandboxes/)
+
+![](https://cdn.beekka.com/blogimg/asset/202608/bg2026081307.webp)
+
+Docker 官方推出的沙箱工具，把 Docker 容器当作沙箱，让 AI Agent 在里面运行，跟底层系统隔离。
+
+2、[CertMate](https://github.com/fabriziosalmi/certmate)
+
+![](https://cdn.beekka.com/blogimg/asset/202507/bg2025070101.webp)
+
+一个自搭建的 SSL 证书管理系统，可以自动申请证书，支持多家云服务商。
+
+3、[crontab guru Dashboard](https://crontab.guru/dashboard.html)
+
+![](https://cdn.beekka.com/blogimg/asset/202506/bg2025063001.webp)
+
+这个工具让你用图形界面，来管理 Cron 任务。
+
+4、[trash-cli](https://github.com/andreafrancia/trash-cli)
+
+一个 Linux 命令行程序，提供回收箱功能，保存已删除的文件，以备将来恢复，参考[介绍文章](https://ittavern.com/adding-a-trash-can-to-linux-with-trash-cli/)。
+
+5、[LeePanel](https://github.com/gna1280072/LeePanel)
+
+![](https://cdn.beekka.com/blogimg/asset/202608/bg2026081001.webp)
+
+安装在本地计算机的远程服务器管理面板，所有操作都由 SSH 操作完成，不需要在服务器安装任何东西。（[@gna1280072](https://github.com/ruanyf/weekly/issues/11083) 投稿）
+
+6、[MarkCard Studio](https://github.com/pangxiaobin/MarkCardStudio)
+
+![](https://cdn.beekka.com/blogimg/asset/202608/bg2026081002.webp)
+
+将 Markdown 文本转成分享卡片，提供16套内置主题，可以自动分页、排版，一次导出整套图片或 PDF。（[@pangxiaobin](https://github.com/ruanyf/weekly/issues/11097) 投稿）
+
+7、[日全食 3D 模拟器](https://github.com/DophinL/solar-eclipse-2026-simulator)
+
+![](https://cdn.beekka.com/blogimg/asset/202608/bg2026081301.webp)
+
+在地图上模拟2026年8月12日的日全食，查看指定地点什么时候开始日食、食甚和结束，以及天空的样子。（[@DophinL](https://github.com/ruanyf/weekly/issues/11136) 投稿）
+
+8、[DBX](https://github.com/t8y2/dbx)
+
+![](https://cdn.beekka.com/blogimg/asset/202608/bg2026081302.webp)
+
+轻量级跨平台的数据库管理工具，支持79余种数据库，并且可以接入 AI 与 MCP。（[@t8y2](https://github.com/ruanyf/weekly/issues/11143) 投稿）
+
+## AI 相关
+
+1、[Cloudflare OS](https://github.com/cloudflare/cloudflare-os)
+
+![](https://cdn.beekka.com/blogimg/asset/202608/bg2026081102.webp)
+
+Cloudflare 本周开源了一个内部的 AI 工具，虽然名字里面有 OS，但其实是在浏览器里使用。
+
+它是一个企业内部的 AI 门户，用来向员工提供统一的 AI 服务，包括 AI 代理、内部应用、知识管理和自动化流程。
+
+2、[乡音阁](https://xiangyinge.com/zh)
+
+![](https://cdn.beekka.com/blogimg/asset/202608/bg2026081101.webp)
+
+在线文字转方言语音工具，目前支持16种方言、63个音色。（[@ldbmcs](https://github.com/ruanyf/weekly/issues/11111) 投稿）
+
+3、[chat.md](https://github.com/rusiaaman/chat.md)
+
+![](https://cdn.beekka.com/blogimg/asset/202508/bg2025083007.webp)
+
+一个 VS Code 插件，将 AI 对话框变成一个 Markdown 文件，用户的输入和 AI 的输出都自动显示在这个文件。
+
+4、[Parse](https://www.parse.bot/)
+
+![](https://cdn.beekka.com/blogimg/asset/202508/bg2025081010.webp)
+
+该网站让你使用自然语言，抓取其他网站的数据，转为 API 输出，免费额度是每分钟5个请求。
+
+## 资源
+
+1、[昆虫世界](https://github.com/xr843/insect-world)
+
+![](https://cdn.beekka.com/blogimg/asset/202608/bg2026081303.webp)
+
+60 种昆虫的 3D 图鉴，可以旋转、缩放、点击标注点，介绍昆虫的身体构造、生活史与生态角色。（[@xr843](https://github.com/ruanyf/weekly/issues/11135) 投稿）
+
+2、[图解分布式系统原理](https://github.com/ruanyf/weekly/issues/11121)（中文）
+
+![](https://cdn.beekka.com/blogimg/asset/202608/bg2026081204.webp)
+
+本系列采用图示和直观解释的方式，深入探讨分布式系统背后的核心思想。（[@lichuang](https://github.com/ruanyf/weekly/issues/11121) 投稿）
+
+3、[吹口哨练习器](https://howtowhistle.org/zh)（HowToWhistle）
+
+![](https://cdn.beekka.com/blogimg/asset/202608/bg2026081205.webp)
+
+练习吹口哨的在线工具，实时检测你吹出的音高，显示当前音符以及与目标音的偏差。（[@0647-cyber](https://github.com/ruanyf/weekly/issues/11127) 投稿）
+
+## 图片
+
+1、[回形针收藏](https://www.presentandcorrect.com/blogs/blog/david-walkers-paper-clip-collection)
+
+一个美国收藏家专门收藏回形针。这些藏品放在一起，还有一点艺术感。
+
+![](https://cdn.beekka.com/blogimg/asset/202509/bg2025091106.webp)
+
+![](https://cdn.beekka.com/blogimg/asset/202509/bg2025091107.webp)
+
+![](https://cdn.beekka.com/blogimg/asset/202509/bg2025091108.webp)
+
+2、[古典雕像的彩绘](https://worksinprogress.co/issue/were-classical-statues-painted-horribly/)
+
+很多东西没有装饰时，比有装饰更漂亮。
+
+希腊罗马雕塑现在显得非常高雅，但是它们最初都有彩绘，看上去非常俗艳。
+
+![](https://cdn.beekka.com/blogimg/asset/202512/bg2025122409.webp)
+
+上图是罗马皇帝奥古斯都的雕像，它最初制作的时候是有彩绘的。
+
+![](https://cdn.beekka.com/blogimg/asset/202512/bg2025122410.webp)
+
+## 文摘
+
+1、[荷兰和中国](https://jaapgrolleman.com/degrees-of-wealth/)（英文）
+
+我是荷兰人，在中国生活了八年。那些日子里，出租车司机和同事总爱问我：“荷兰和中国哪个更好？”
+
+现在，我回到荷兰定居，人们却反过来问我：想念中国的生活吗？
+
+这两个问题都不容易回答。这是两种不同的生活，很难比较。
+
+住在上海的时候，我曾经瞧不起荷兰那些老旧的科技——银行卡、政府的纸质信件、乏善可陈的基础设施。回到荷兰后，我也确实怀念中国豪华的电动汽车，以及便捷的换电功能。但是，荷兰的自行车基础设施实在太棒了，而且阳光明媚的日子里骑车出行乐趣无穷。
+
+大多数荷兰人比上海人富裕，但家中却没有空调，他们开着更小、更老旧、配置更少的汽车。公共交通相比之下糟糕透顶。手机更小、分辨率更低、速度更慢——电视也是如此。商店周日关门，人们仍然使用现金或银行卡支付。
+
+有一次，我想打电话给我的荷兰银行，在它的网站上费了九牛二虎之力才找到电话号码，然后电话排队等上15分钟才能问到一个10秒钟就能解决的问题。而在中国，银行 App 里就有聊天功能，可以立即联系到客服人员。
+
+荷兰的公共厕所也比较少，因为维护成本太高，政府不愿意为此买单。私人保姆或清洁工也少得多，因为价格极其昂贵，我们只能重新开始全职在家做饭，外出就餐很贵，外卖选择也很少，而且送餐速度很慢。
+
+但是，荷兰人有更多的空闲时间，而且住的房子更大，通常前后院都有草坪。由于物价更高（包括商品和劳动力），荷兰的二手市场规模更大——自行车、汽车、家具等等，物品必须回收利用、修理或尽可能延长使用寿命。
+
+在上海，我们会在网上购买婴儿用品，阅读关于最新款玩具或带有人工智能功能的婴儿摄像头的介绍。而在荷兰，我的父母仍然保留着我小时候用过的玩具、婴儿床和餐具——三十多年后的今天，我的小孩还在用。
+
+总的来说，荷兰是一个规模较小、技术水平较低的社会。规模小体现在市政厅只有一个办公窗口，而上海却有数百个市民服务中心，每个中心都设有数十个服务台。据我所知，我生活的小镇只有一台自动取款机和一个小型图书馆。
+
+在我看来，荷兰是一个拥有充裕时间的国度，人民过着节俭的生活，而中国是一个急切变革的国度，迅捷而急躁，人们争先恐后争取自己的机会。
+
+回到最初的问题——荷兰和中国哪个更好——我的回答依然是，这两个国家各有自己的长处和不足，两种生活截然不同。
+
+## 言论
+
+1、
+
+AI 省下的时间，不是用来休假的，而是应该用来开发更多产品。你们正在做这个星球上最令人兴奋的事情。
+
+-- [Andrew Bosworth](https://finance.sina.cn/7x24/2026-08-09/detail-inimsssr1991323.d.html)，Meta 公司 CTO 回答员工的提问，关于 AI 带来的生产力提升是否可以转化为更多的休假时间的。
+
+2、
+
+一些人试图将蒸馏描述为有害行为，但我认为，应当保护“可以从任何能够观察到的事物中学习”这一原则。
+
+-- [扎克伯格](https://finance.sina.cn/7x24/2026-08-11/detail-inimxrnq5879406.d.html)，Meta 公司创始人
+
+3、
+
+有很多理由在本地运行大模型，但省钱不在其中。
+
+目前，OpenCode Go 套餐的用户，平均每天花费1.14美元，来运行 DeepSeek Flash v4。同样的功能在本地运行，你需要使用双 DGX 架构，即使每天费用翻上10倍，也需要 24 年才能收回成本。
+
+-- [Dax Raad](https://x.com/thdxr/status/2086599224674681242)，OpenCode 创始人
+
+4、
+
+你不接受某种想法，但仍然愿意对其进行思考，这是受过良好教育的标志。
+
+-- [亚里士多德](https://www.campion.edu.au/blog/top-25-aristotle-quotes-on-virtue-knowledge-and-happiness/)
+
+## 往年回顾
+
+[暗网 Tor 安全吗？](https://www.ruanyifeng.com/blog/2025/08/weekly-issue-361.html)（#361）
+
+[低利率与长期项目](https://www.ruanyifeng.com/blog/2024/08/weekly-issue-311.html)（#311）
+
+[黑客马拉松的正确方式](https://www.ruanyifeng.com/blog/2023/07/weely-issue-261.html)（#261）
+
+[虚拟商品可以拉动 GDP](https://www.ruanyifeng.com/blog/2022/06/weekly-issue-211.html)（#211）
+
+（完）
+
+

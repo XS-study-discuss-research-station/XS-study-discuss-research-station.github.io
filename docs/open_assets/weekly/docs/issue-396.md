@@ -1,0 +1,376 @@
+# 科技爱好者周刊（第 396 期）：互联网通信的替代方案
+
+这里记录每周值得分享的科技内容，周五发布。
+
+本杂志[开源](https://github.com/ruanyf/weekly)，欢迎[投稿](https://github.com/ruanyf/weekly/issues)。另有[《谁在招人》](https://github.com/ruanyf/weekly/issues/9815)服务，发布程序员招聘信息。合作请[邮件联系](mailto:yifeng.ruan@gmail.com)（yifeng.ruan@gmail.com）。
+
+## 封面图
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026051414.webp)
+
+浙江新昌县的“新昌小球中心”，将酒店、商场、体育馆、体育场、户外健身步道都融合在一个建筑里面。（[via](https://www.archdaily.cn/cn/1036435/xin-chang-xiao-qiu-zhong-xin-line-plus-studio)）
+
+## 互联网通信的替代方案
+
+某天清晨，你醒来发现互联网断了，怎么办？
+
+我说的是彻底的中断，完全不能运作，整个城市无法上网。这种事件虽然可能性很小，但还是有可能，比如遭遇了自然灾害或战事。
+
+假设一时半会无法恢复通信，那么有没有替代方案？也就是说，**我们怎么自己组网**。
+
+虽然互联网是无中心结构，搞一个子网并不难，但搞一个大规模子网，能够容纳一群分散的朋友，还是很难的。无论通过何种方式组网——无线路由、电话线、蓝牙或自己拉光纤——难度和成本都不低。
+
+今天，分享一个我所知的最简单组网方案。
+
+1. 覆盖范围达到几十公里，甚至更远。
+1. 不需要架设任何线缆，自己发射无线信号。
+1. 供电只需要一个移动电源，甚至一节电池。
+1. 价格非常便宜，单套设备（发射端+客户端）最多只要几百元人民币。
+
+唯一的缺点是带宽比较小，不能用来浏览网页，更不能看视频，只能发送/接收文本信息。
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026051412.webp)
+
+这个方案叫做 LoRa，或者严格地说，它的通信协议叫做 LoRa，也就是“长距离”（Long Range）的缩写。
+
+LoRa 协议是专为远距离通信而发明的，只需很小的设备和一点点能量，就能向周围发送无线信号，有点像个人的无线电广播。它的编码算法特别强调抗干扰，哪怕信号非常弱，也能还原出来，所以可以远距离接收。
+
+它本身只是一个无线信号的协议，需要自己实现发送/接收设备，完成编码和解码。开源项目 [Meshtastic](https://meshtastic.org) 就做了这件事，规定了软硬件接口，并给出了设备实现。
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026051413.webp)
+
+所以，一切就很简单了。**你只要找 Meshtastic 兼容设备，人手一个，就能组一个简单的通信网**。它自己会在所有节点之间网状传递消息。
+
+在国内电商网站上，Meshtastic 终端设备一个从几十元到几百元人民币不等。它是开源系统，任何厂商都可以生产兼容设备，官网有一个[设备名单](https://meshtastic.org/docs/hardware/devices/)可以查看，下面是几种终端设备的样子。
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026051005.webp)
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026051007.webp)
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026051006.webp)
+
+官网也提供各种平台的[软件客户端](https://meshtastic.org/docs/software/)，下面就是手机客户端的界面。
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026051004.webp)
+
+前面说过了，它的终端耗电量很小，只需要充电宝，就能长时间使用（几天到几周），如果配上随身太阳板，可以永久在线。
+
+两个节点之间的传输距离5公里以内没有问题，如果建筑不密集，可以达到10公里～15公里；如果是空旷地带（比如水面），则可以达到几十公里或更远。多节点组网后，消息就能接力传播，那就传得更远了。
+
+综合以上各点，这应该是最简单实用、最便宜的个人组建通信网方案了。它替代不了网页，但可以替代互联网的消息功能。
+
+## 开源 AI 开发平台 MonkeyCode
+
+大模型公司都有一个网页界面，让你在线使用他们的模型。
+
+今天介绍一个开源项目 [MonkeyCode](https://github.com/chaitin/MonkeyCode/)，可以让你自己架设这样的 AI 网页界面（下图），已经有近3000颗星。
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026051203.webp)
+
+它有完整的 AI 编程功能，不需要再用其他工具、搭环境、来回切换，只需要打开浏览器，一句话提交需求。
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026051101.webp)
+
+通过它的 Web 界面，你可以在宿主机里面，**新建多个虚拟机**，不同的 AI 项目跑在不同的虚拟机。它为虚拟机提供各种系统镜像。
+
+它还支持配置钉钉、飞书、企业微信、Webhook 的消息通知，以及 GitHub、GitLab、Gitee、Gitea 的仓库绑定。
+
+除了自己搭建，它还有免费的[云端开发环境](https://monkeycode-ai.com/console)，手机和电脑多端都能控制。
+
+云端环境的免费额度是每天2000万 Token，另外提供 GPT 5.5 等多个模型供调用（需要积分）。
+
+## 逆向验证码
+
+网站的验证码一般用来确认，访问者是真人，不是机器人。
+
+现在，开源的浏览器操作库 Browser-use 提出了[逆向验证码](https://browser-use.com/posts/prove-you-are-a-robot)的概念。这种验证码阻挡真人，放行 AI 机器人，用于那些只供 AI 使用的 API。
+
+下面是一道数学题，就是逆向验证码。
+
+![](https://cdn.beekka.com/blogimg/asset/202604/bg2026042007.webp)
+
+这样的题目，真人看不懂，自然不可能回答。但是，大模型能够剔除里面的大写字母、随机字符和空格，读懂原始题目：
+
+> 两列火车在长度为 d 的直线轨道上以速度 v1 和 v2 相向而行。​一只鸟以速度 vb 从一列火车出发，飞到另一列火车上，然后掉头飞回来，如此反复，直到两列火车相遇。这只鸟一共飞了多远？
+
+读懂题目后，大模型就会调用数学公式算出答案，从而通过验证码。
+
+## 科技动态
+
+1、[重新定义鼠标指针](https://deepmind.google/blog/ai-pointer/)
+
+从发明以来，鼠标指针一直表示用户当前操作的位置。
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026051303.webp)
+
+谷歌提出一个新的方案，改变了鼠标指针的含义。
+
+以后，鼠标指针只用来可视化展示 AI 操作的流程，方便用户看到 AI 此刻正在做什么。
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026051304.webp)
+
+这也意味着，用户在 AI 模型下，不再能移动鼠标，要依靠键盘或语音下达操作指令。
+
+2、[回收旧铜线](https://www.bloomberg.com/news/articles/2024-05-29/telcos-hunt-down-billions-worth-of-buried-copper-as-prices-soar)
+
+新能源时代需要铜，电动汽车、太阳能发电、风力发电……这些都需要铜做的电线。
+
+最近几年，铜的价格因此一直上涨，连带使得旧铜线的回收，也成了一门大生意。
+
+![](https://cdn.beekka.com/blogimg/asset/202405/bg2024053107.webp)
+
+以前的电话线和网线，都大量使用铜，现在都闲置了，被光纤和手机取代。另外，地下还有很多已经不用的旧电缆，旧空调里面也有很多铜。
+
+![](https://cdn.beekka.com/blogimg/asset/202405/bg2024053106.webp)
+
+如果这些铜都能回收，将是一笔巨大的财富。而且，铜的回收很简单，只要去除外面的保护套，得到的就是纯度很高的铜线。
+
+可以预见，铜的回收将成为城市里面的一个专门行业。
+
+3、[送货机器人占据人行道](https://blockclubchicago.org/2025/12/08/delivery-robots-take-over-chicago-sidewalks-sparking-debate-and-a-petition-to-hit-pause/)
+
+美国大城市芝加哥，在市区大量使用送货机器人，已经引起了居民抗议。
+
+![](https://cdn.beekka.com/blogimg/asset/202512/bg2025120917.webp)
+
+因为送货机器人走的是人行道，不是马路，妨碍了行人。
+
+![](https://cdn.beekka.com/blogimg/asset/202512/bg2025120918.webp)
+
+一位市民说，“人行道是为人准备的，不是为送货机器人准备的。安静的居民区，出现几十辆甚至上百辆这样的车，将会变成什么样子？”
+
+![](https://cdn.beekka.com/blogimg/asset/202512/bg2025120919.webp)
+
+这确实是一个问题，人类真的喜欢和机器人走在一起吗？你能接受旁边的行人是机器人吗？
+
+![](https://cdn.beekka.com/blogimg/asset/202512/bg2025120920.webp)
+
+## 文章
+
+1、[为什么追踪 ID 必须是128位？](https://newsletter.signoz.io/p/why-should-a-trace-id-be-128-bits)（英文）
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026050901.webp)
+
+如果需要为用户生成随机 ID，最好是128位长，否则根据概率论，（大访问量的服务）可能会产生碰撞。
+
+2、[AI 应该输出 HTML 格式](https://simonwillison.net/2026/May/8/unreasonable-effectiveness-of-html/)（英文）
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026050902.webp)
+
+现在的 AI 输出的是 Markdown 格式，本文认为应该输出 HTML 格式，这样 AI 就能插入 SVG 图表、交互式组件、页内导航等，以携带更多信息。
+
+3、[我很担心 Bun](https://wwj.dev/posts/i-am-worried-about-bun/)（英文）
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026050905.webp)
+
+Bun 是一个 JS 运行时，2025年12月被 Anthropic 收购，作者很担心它以后会充满 AI 生成的代码，质量下降。
+
+4、[如何保护 SSH 私钥？](https://ahelwer.ca/post/2026-05-08-builtin-u2f/)（英文）
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026051001.webp)
+
+恶意软件越来越多，防不胜防，本文（在后半部分）教你怎么用本机的安全机制保护 SSH 私钥，读取私钥需要指纹或面容识别，这样就不易被窃取。
+
+5、[我把22端口开放了54天](https://arman-bd.hashnode.dev/i-left-port-22-open-on-the-internet-for-54-days-here-s-who-showed-up)（英文）
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026051003.webp)
+
+22端口是 SSH 登录端口，会受到各种攻击。作者用一个蜜罐将这个端口开放，看看会发生什么，那些登入系统的黑客又执行了哪些命令。
+
+6、[布洛芬与泰诺的区别](https://asteriskmag.com/issues/14/the-mystery-in-the-medicine-cabinet)（英文）
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026051202.webp)
+
+布洛芬与泰诺都是常见的退烧镇痛药，本文介绍了两者的区别。作者提出，只要不超量，泰诺在大多数情况下要好于布洛芬。
+
+## 工具
+
+1、[RethinkDNS](https://github.com/serverless-dns/serverless-dns)
+
+一个开源的 DNS 服务器，可以部署在 Serverless 环境（比如 Cloudflare worker）。
+
+2、[Pinta](https://www.pinta-project.com/)
+
+![](https://cdn.beekka.com/blogimg/asset/202512/bg2025122501.webp)
+
+开源的图像处理软件，PhotoShop 的替代品，支持各种桌面平台。
+
+3、[GitForms](https://github.com/Luigigreco/gitforms)
+
+![](https://cdn.beekka.com/blogimg/asset/202512/bg2025121901.webp)
+
+这个开源应用可以把表单数据存到 GitHub issue。也就是说，你可以不要后端，通过它收集用户提交的表单数据。
+
+4、[gecit](https://github.com/boratanrikulu/gecit)
+
+一个安装在本地计算机、伪装网络请求目的地的命令行工具，也就是变造数据包的 SNI（域名）字段。
+
+5、[MapPoster Online](https://github.com/ianho7/maptoposter-online)
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026050801.webp)
+
+开源 Web 应用，将城市地图变成海报。（[@ianho7](https://github.com/ruanyf/weekly/issues/9880) 投稿）
+
+6、[boss-agent-cli](https://github.com/can4hou6joeng4/boss-agent-cli)
+
+BOSS 直聘 + 智联招聘的命令行工具，可以搜索/查看岗位，求职者 + 招聘者两种角色都可以使用，支持接入 AI Agent。（[@can4hou6joeng4](https://github.com/ruanyf/weekly/issues/9908) 投稿）
+
+7、[TITAN PLANET](https://github.com/ezet-galaxy/-ezetgalaxy-titan)
+
+一个挺有创意的项目，本身是一个 JavaScript 后端框架，但可以编译成单个 Rust 二进制包，从而大大提高执行速度。
+
+8、[qjp](https://github.com/plainas/qjp)
+
+一个命令行的 JSON 互动查询器，打开 JSON 文件，它会显示所有一级项目，你可以选择要某一项，进行树状展开。
+
+9、[tinypdf](https://github.com/Lulzx/tinypdf)
+
+一个极小化的 JS 库，用来生成 PDF 文件，只有 3KB。
+
+10、[edge-tts](https://github.com/rany2/edge-tts)
+
+一个 Python 包，使用微软的在线语音服务，将文本转成语音。
+
+## AI 相关
+
+1、[FeedFuse](https://github.com/BryanHoo/FeedFuse)
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026051204.webp)
+
+一个加入 AI 功能的 RSS web 阅读器，自动抓取全文，提供 AI 摘要和翻译。（[@BryanHoo](https://github.com/ruanyf/weekly/issues/9916) 投稿）
+
+2、[IBus LLM Pinyin Input](https://github.com/volsifly/ibus_llm_pinyin_input)
+
+基于 IBus 的 AI 拼音输入法，由大模型根据用户输入，给出中文候选词。（[@volsifly](https://github.com/ruanyf/weekly/issues/9911) 投稿）
+
+3、[kooky](https://github.com/iAmCorey/kooky)
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026051301.webp)
+
+专为 AI coding 优化的极简 macOS 终端，可以一键启动 Claude Code/Codex 等各种agent，分屏运行和显示状态。（[@iAmCorey](https://github.com/ruanyf/weekly/issues/9921) 投稿）
+
+## 资源
+
+1、[taken.](https://sinceyouarrived.world/taken)
+
+这个网站可以查看，你的网页请求包含多少个人信息。
+
+2、[DataCenter.fm](https://datacenter.fm)
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026050904.webp)
+
+一个背景音生成器，模拟机房运行的声音。
+
+3、[MathNet](https://mathnet.mit.edu/)
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026050906.webp)
+
+麻省理工学院维护的一个网站，收集了3万多道数学题。
+
+4、[用户体验法则](https://lawsofux.com/)
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026050907.webp)
+
+这个网站收集各种用户体验（UX）法则，比如[米勒法则](https://lawsofux.com/millers-law/)：普通人一次能记住7个项目（变动范围为5～9）”。
+
+## 图片
+
+1、[卫星污染](https://apod.nasa.gov/apod/ap260427.html)
+
+地球上空的卫星越来越多，严重影响了天文观察，因为卫星会反射光，导致看不清其他天体。
+
+下面是天文学家用长曝光拍摄彗星，结果拍到的都是卫星。
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026050908.webp)
+
+因为卫星在移动，所以长曝光出来就是网格状的线条。你还能在上图中找到彗星吗？
+
+随着卫星通信的发展，卫星将会指数式增长，天文学家已经建议把望远镜建到月球背面。
+
+## 文摘
+
+1、[太空咖啡机](https://mceglowski.substack.com/p/bitter-lessons-from-the-isspresso)
+
+美国宇航员入驻国际空间站后，喝热咖啡很困难。美国宇航局于是就向一家意大利公司订购一台可以在太空使用的咖啡机。
+
+这家意大利公司很快发现，这项任务非常困难。
+
+咖啡机的每一个环节都需要重新设计，确保不能危及宇航员和太空站的安全：它不能破坏电力系统、不能干扰无线电通讯、不能泄漏沸水、不能起火、不能发出刺眼的强光、不能导致人员触电、不能过热、不能发出巨响、不能释放有害气体、不能散发异味。
+
+尤其困难的是下面几点。
+
+（1）咖啡机必须能够承受物理冲击，主要是火箭发射期间的加速度。
+
+（2）空间站没有空气对流，咖啡机必须有单独的散热系统，防止过热起火。
+
+（3）太空是零重力环境，咖啡机不能有液体溢出，不能让沸水雾汽弥漫整个舱室。
+
+（4）咖啡机不能有尖锐边缘，防止割伤宇航员。
+
+经过反复论证、实验、测试，这台太空咖啡机终于造出来了，并于2015年运送到了国际空间站。
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026050911.webp)
+
+在地球上，一台基本功能的咖啡机大约售价150美元，重3.5公斤，而太空咖啡机重达20公斤，成本可能高达数百万美元。
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026050912.webp)
+
+它制作出来的咖啡是一包包软饮料，靠挤压饮用。
+
+![](https://cdn.beekka.com/blogimg/asset/202605/bg2026050913.webp)
+
+2、[别相信“不使用 AI 的人会落后”](https://migrainebrain.bearblog.dev/people-who-dont-use-ai-will-be-left-behind/)
+
+有些人说：“不使用 AI 的人将会被时代抛弃。” 我很讨厌这种说法，因为我非常肯定，实际情况恰恰相反。
+
+依赖 AI 的人终将被时代抛弃。他们会忘记如何思考，如何写作，如何进行简单可靠的搜索，如何分辨事实与虚构……
+
+他们会忘记如何学习，我觉得这才是最让我难过的地方，学习本身是多么美好的事情啊。
+
+如果你相信 AI 能比你做得更好，你要做的不是把所有事情都委托给 AI，而是努力变得更强，在那些 AI 无法做到的事情上面。
+
+## 言论
+
+1、
+
+全世界每年售出15亿部智能手机，其中大部分的使用时间不到两年，然后就被丢弃或闲置。
+
+这是计算资源的巨大浪费。现代智能手机的配置越来越高，完全可以用来提升全球计算能力。
+
+-- [《废旧智能手机再利用》](https://arxiv.org/abs/2110.06870)
+
+2、
+
+未来的编程语言，不会是你最容易掌握的语言，而是 AI 最容易掌握的语言。
+
+-- [@RealRichomie](https://x.com/RealRichomie/status/2047509168442196230)
+
+3、
+
+创造力是否随着年龄增长而衰退？
+
+一项美国的研究提出，创造力分成两种：关联性创新能力往往随着年龄增长而增强，而颠覆性创新能力则会下降。
+
+--[《科学进步总是以葬礼为代价》](https://nautil.us/is-this-why-science-advances-one-funeral-at-a-time-1280650)
+
+4、
+
+大模型是对训练数据的有损压缩，而训练数据又是对真实世界的有损采样。
+
+当 AI 生成输出时，则需要填补压缩过程中丢失的信息，将其膨胀成文章、图片、软件、视频等等。
+
+-- [《膨胀神器》](https://mattstromawn.com/writing/expansion-artifacts/)
+
+## 往年回顾
+
+[神经网络算法的发明者](https://www.ruanyifeng.com/blog/2025/05/weekly-issue-349.html)（#349）
+
+[AI 的关键是语料](https://www.ruanyifeng.com/blog/2024/05/weekly-issue-299.html)（#299）
+
+[最成功的软件企业家](https://www.ruanyifeng.com/blog/2023/04/weekly-issue-249.html)（#249）
+
+[俄罗斯的 HTTPS 证书问题](https://www.ruanyifeng.com/blog/2022/03/weekly-issue-199.html)（#199）
+
+（完）
+
+

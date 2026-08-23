@@ -17,17 +17,17 @@ hide:
 
 <div class="grid cards" align="center" markdown>
 
--   "It is the mark of an educated mind to be able to entertain a thought without accepting it." - Aristotie
+-   “人们无法选择自己的出身，世界就是这样的不公。但世界又是公平的，每个人都有抗争的权力。” —— 原神-阿蕾奇诺
 
     ---
 
-    “思想成熟的标志是面对一种观点能容纳而不必接纳。” —— 亚里士多德
+    "People can't choose their birth, the world is just unfair like that. But the world is also fair in a way, everyone has the right to fight back." —— GenshinImpact-Arlecchino
 
 </div>
 
 <br/>
 
-<p>近日公告</p>
+<p>最新公告</p>
 
 <div class="grid cards" markdown>
 
