@@ -11,6 +11,7 @@ icon: fontawesome/regular/newspaper
 
 **八月**
 
+- 第 410 期：[你需要知道的 AI 三种机制](docs/issue-410.md)
 - 第 409 期：[程序员的职业未来](docs/issue-409.md)
 - 第 408 期：[你需要知道的 AI 缓存知识](docs/issue-408.md)
 - 第 407 期：[国家为什么需要开源软件？](docs/issue-407.md)
