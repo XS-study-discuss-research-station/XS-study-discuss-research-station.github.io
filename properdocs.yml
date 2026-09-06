@@ -448,6 +448,7 @@ nav:
       - open_assets/index.md
       - 科技爱好者周刊:
           - open_assets/weekly/index.md
+          - 第 411 期: open_assets/weekly/docs/issue-411.md
           - 第 410 期: open_assets/weekly/docs/issue-410.md
           - 第 409 期: open_assets/weekly/docs/issue-409.md
           - 第 408 期: open_assets/weekly/docs/issue-408.md

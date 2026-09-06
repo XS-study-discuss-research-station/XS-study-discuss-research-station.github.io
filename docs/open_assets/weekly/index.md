@@ -9,6 +9,10 @@ icon: fontawesome/regular/newspaper
 
 ## 2026
 
+**九月**
+
+- 第 411 期：[OpenClaw 2.0 是一个缩影](docs/issue-411.md)
+
 **八月**
 
 - 第 410 期：[你需要知道的 AI 三种机制](docs/issue-410.md)
