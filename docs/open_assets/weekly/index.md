@@ -11,6 +11,7 @@ icon: fontawesome/regular/newspaper
 
 **九月**
 
+- 第 412 期：[禁止 issue，只用 PR](docs/issue-412.md)
 - 第 411 期：[OpenClaw 2.0 是一个缩影](docs/issue-411.md)
 
 **八月**

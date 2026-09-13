@@ -7,16 +7,6 @@ icon: material/gamepad-square-outline
 
 <div class="grid cards" markdown>
 
--   :material-minecraft: [MC服务器](./mc/index.md)
-    
-    ---
-
-    我的世界java版原版生电服务器
-
-</div>
-
-<div class="grid cards" markdown>
-
 -   :material-alpha-m: [Mindustry](./mindustry/index.md)
     
     ---
