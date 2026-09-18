@@ -1,0 +1,350 @@
+# 科技爱好者周刊（第 413 期）：再见了，React Native
+
+这里记录每周值得分享的科技内容，周五发布。（**[通知] 下周五开始的中秋和十一假期，周刊休息。**）
+
+本杂志[开源](https://github.com/ruanyf/weekly)，欢迎[投稿](https://github.com/ruanyf/weekly/issues)。另有[《谁在招人》](https://github.com/ruanyf/weekly/issues/11434)服务，发布程序员招聘信息。合作请[邮件联系](mailto:yifeng.ruan@gmail.com)（yifeng.ruan@gmail.com）。
+
+## 封面图
+
+![](https://cdn.beekka.com/blogimg/asset/202609/bg2026091701.webp)
+
+华东师范大学闵行校区新启用的西校门，仿造了它的前身之一光华大学的校门。（[via](https://www.ecnu.edu.cn/info/1426/73055.htm)）
+
+## 再见了，React Native
+
+Spotify [宣布](https://shopify.engineering/back-to-native)，放弃 React Native，改用 Swift 和 Kotlin 开发它的移动版。
+
+![](https://cdn.beekka.com/blogimg/asset/202609/bg2026091307.webp)
+
+也就是说，它决定采用原生语言，开发 iOS 和安卓客户端，不再采用 Web 技术开发一个中间版本，再编译成各平台的客户端。
+
+这不禁让人想起，六年前的2020年，它也是写了[一篇文章](https://shopify.engineering/react-native-future-mobile-shopify)，高调宣布放弃原生语言，全面转向 React Native，拥抱 Web 技术。
+
+这在当时是一个大新闻，很多人认同 Spotify 选择 Web 技术的三个理由。
+
+> - 不用为每个平台重复开发相同的功能。
+> - 允许开发人员跨技术栈工作。
+> - 多出来的时间和精力，可以用来创造更多的价值。
+
+说实话，这三个理由都是场面话，真正的理由只有一个：省钱。
+
+当年为了省钱，它选择了 React Native，只需要养一个团队，比起安卓和 iOS 要养两个团队，可以大大节省成本。
+
+如今放弃 React Native，也是为了省钱。现在有了 AI，使用什么语言根本无所谓。 AI 可以便捷地翻译语言，那么为什么不用性能更好的原生语言呢，跳过中间版本。
+
+当然，React Native 自己也是不争气。自从2015年发布，迄今已经超过10年，一些基本的技术问题至今没有很好地解决，使用上手也不是很方便。它被别人替代，说实话，一点都不冤。
+
+总之，AI 就是一个无所不能的自动翻译器，一旦问世，像 React Native 这种中间语言或者翻译层，就被判死刑了，此刻开始退出历史舞台成了必然的结局。
+
+## 世界地图的新投影方法
+
+上周发生了一件大事，联合国投票决定[废除](https://www.not-ship.com/united-nations-map/)墨卡托投影。
+
+这个决定对各国没有约束力，只是一个标志，表明墨卡托投影真的是过时了，可能需要淘汰。
+
+我们知道，地球是圆的，地图是平的。这注定了必须采用某种转化方法，才能将球形地貌投影变成平面地图。这也从一个侧面说明，平面地图肯定存在失真。
+
+![](https://cdn.beekka.com/blogimg/asset/202609/bg2026091702.webp)
+
+上面是目前通行的世界地图，采用了墨卡托投影。
+
+这种投影相当于把地球仪直接拉伸为矩形，后果就是高纬度地区会被极大拉伸，看上去面积偏大。
+
+上图中，赤道的非洲看上去跟高纬度的格陵兰岛一样大小。实际上，前者的面积是后者的14倍。
+
+联合国建议，废除墨卡托投影，**采用新的平等地球投影法（Equal Earth Projection）绘制世界地图**。
+
+平等地球投影法的核心原则是不改变面积比例。如果一块土地占地球面积1%，那么它占地图面积也应该是1%，所以它的面积比例不会失真。
+
+代价是，它会根据面积进行拉伸。对于赤道与低纬度地区，南北方向适当纵向拉伸，东西方向适当收缩；对于两极与高纬度地区，东西方向大幅变宽，南北方向大幅变扁。
+
+所以，这种投影法会造成土地形状失真，长和宽都可能变形，无法使用这种地图进行精确导航。
+
+![](https://cdn.beekka.com/blogimg/asset/202609/bg2026091305.webp)
+
+上图就是平等地球投影法的世界地图，非洲变大了。
+
+下面是墨卡托投影和平等地球投影的欧洲和非洲。大家可以比较差异。
+
+![](https://cdn.beekka.com/blogimg/asset/202609/bg2026091306.webp)
+
+## 科技动态
+
+1、[隐藏摄像头检测器](https://www.chosun.com/english/industry-en/2026/08/30/SBFXUIJQYZEARKP5T4FBAY25HQ/)
+
+你是否担心，周围有隐藏摄像头在偷窥你？
+
+韩国科学家发明了一种装置，可以快速检测周围有没有这种隐藏的摄像头。
+
+这种装置就是一块电路板，上面有多个发光二极管，会依次点亮，连接手机即可使用，造价很低。
+
+![](https://cdn.beekka.com/blogimg/asset/202609/bg2026090101.webp)
+
+它的原理是，发光二极管发出的光，会被隐藏的摄像头反射。只要从接收到的反射光里面，排除正常的镜面，就可以确定摄像头的位置。
+
+那么，如何才能排除其他的反射光呢？这个装置用了一个很巧妙的方法，就是依次亮起不同位置的发光二极管。
+
+其他的反射光都来自平面镜，只有摄像头的镜面是凸起的透镜，反射光会出现位置偏移。利用不同位置的光源，就可以确定哪些反射光发生了位置偏移，进而确定反射点的位置。
+
+![](https://cdn.beekka.com/blogimg/asset/202609/bg2026090102.webp)
+
+2、**一句话新闻**
+
+（1）[胡塞武装](https://news.ycombinator.com/item?id=49660072)最近赢得了一场重大胜利，据说使用了史上最匪夷所思的获胜方法。
+
+他们伪造了对方指挥官的一段音频，指挥官命令部队撤退。他们让一个网红在推特上传播这段假音频，结果对方军队居然真的陷入了混乱，他们就顺利进军，以很小的代价占领了对方的地盘。
+
+（2）笔记本开始采用固态散热技术，不再需要风扇，通过石墨烯/铜箔贴片散热。
+
+因此，笔记本可以做得极薄、极轻巧。[联想](https://www.notebookcheck.net/Lenovo-unveils-ThinkBook-AeroBlade-14-inch-laptop-that-weighs-under-830-grams.1388619.0.html)最近发布了一款14寸概念笔记本，居然只有830克。华为的14寸笔记本 MateBook Pro S 更是只有798克。
+
+![](https://cdn.beekka.com/blogimg/asset/202609/bg2026091201.webp)
+
+（3）成都市计划实施“[词元券](https://finance.sina.cn/2026-09-11/detail-inirnhrv2204082.d.html?vt=4)”，企事业单位可以免费申领，你消耗的 Token，政府可以补贴不超过30%的消费金额。
+
+此外，成都市还计划了“词元贷”，可以向银行贷款消费 Token。
+
+## 文章
+
+1、[我的 HTML 模板文件](https://vale.rocks/posts/html-boilerplate)（英文）
+
+![](https://cdn.beekka.com/blogimg/asset/202609/bg2026091303.webp)
+
+作者详细介绍了2026年的网页 HTML 模板应该是什么样子，每一行有什么作用。
+
+2、[如何用 JavaScript 取消 CSS](https://css-tricks.com/that-time-i-tried-browsing-the-web-without-css/)（英文）
+
+![](https://cdn.beekka.com/blogimg/asset/202506/bg2025062102.webp)
+
+一篇初级教程，教你用 JS 取消网页的 CSS 样式表。
+
+3、[容器管理工具和反向代理工具](https://web.archive.org/web/20250401115923/https://kiranet.org/posts/self-hosting-like-its-2025/)（英文）
+
+![](https://cdn.beekka.com/blogimg/asset/202504/bg2025040105.webp)
+
+作者介绍，他如何用容器技术搭建服务器，所使用的技术栈和各种工具。
+
+4、[JavaScript 的怪异之处](https://stack-auth.com/blog/on-javascripts-weirdness)（英文）
+
+![](https://cdn.beekka.com/blogimg/asset/202504/bg2025040501.webp)
+
+一篇 JavaScript 的科普文章，介绍一些不太被注意的 JS 语法怪异之处。
+
+5、[谷歌搜索的 udm 参数](https://serpapi.com/blog/every-google-udm-in-the-world/)（英文）
+
+![](https://cdn.beekka.com/blogimg/asset/202506/bg2025062107.webp)
+
+谷歌搜索的 url 可以加上一个 udm 参数，用来访问特定类型的结果，比如 udm=2 就是返回图像结果。
+
+6、[熵的解释](https://www.engineersedge.com/thermodynamics/entropy_explained_with_sheep_15961.htm)（英文）
+
+![](https://cdn.beekka.com/blogimg/asset/202410/bg2024101406.webp)
+
+本篇长文用通俗的语言，解释“熵”的概念，有不少插图。
+
+## 工具
+
+1、[Great Tables](https://github.com/posit-dev/great-tables)
+
+![](https://cdn.beekka.com/blogimg/asset/202404/bg2024040402.webp)
+
+一个可以生成复杂表格的 Python 库。
+
+2、[ghostty-web](https://github.com/coder/ghostty-web)
+
+![](https://cdn.beekka.com/blogimg/asset/202512/bg2025120214.webp)
+
+这个项目将终端模拟器 [Ghostty](https://ghostty.org/) 编译成 WASM 代码，从而可以在网页里面使用一个全功能的终端。
+
+3、[Infat](https://github.com/philocalyst/infat)
+
+一个命令行工具，在 Mac 电脑上设置不同后缀名文件的默认打开方法。
+
+4、[mini-img-editor](https://github.com/xdadda/mini-photo-editor)
+
+![](https://cdn.beekka.com/blogimg/asset/202504/bg2025042901.webp)
+
+一个使用 WebGL 的在线图片编辑器，作为原型演示，界面非常简洁。
+
+5、[CryptPad](https://cryptpad.fr/)
+
+![](https://cdn.beekka.com/blogimg/asset/202505/bg2025050101.webp)
+
+免费使用的线上 Office 办公套件，支持端对端加密，参见[介绍文章](https://www.xda-developers.com/reasons-why-use-cryptpad-instead-google-docs/)。
+
+6、[Lyrimuse](https://github.com/Yudaotor/lyrimuse)
+
+![](https://cdn.beekka.com/blogimg/asset/202609/bg2026091308.webp)
+
+macOS 桌面歌词工具，实时查找显示正在播放的歌曲的歌词。（[@Yudaotor](https://github.com/ruanyf/weekly/issues/11551) 投稿）
+
+7、[capcut-cli](https://github.com/renezander030/capcut-cli)
+
+![](https://cdn.beekka.com/blogimg/asset/202609/bg2026091619.webp)
+
+剪映（capcut）的非官方命令行工具，在终端里面创建/编辑视频。（[@renezander030](https://github.com/ruanyf/weekly/issues/11634) 投稿）
+
+8、[mailez](https://github.com/mailez-hq/mailez)
+
+![](https://cdn.beekka.com/blogimg/asset/202609/bg2026091621.webp)
+
+一个 Go 语言的二进制文件，实现自托管邮件系统，网页收发邮件，支持 SMTP / IMAP / POP3 / ManageSieve 四个协议。（[@lianguan](https://github.com/ruanyf/weekly/issues/11680) 投稿）
+
+9、[Status Trio](https://github.com/lingyired/status-trio)
+
+![](https://cdn.beekka.com/blogimg/asset/202609/bg2026091622.webp)
+
+一款借鉴 iPhone Duo 设计的三合一 Mac 状态栏图标，集成 Wi‑Fi 、电池与音量。（[@lingyired](https://github.com/ruanyf/weekly/issues/11670) 投稿）
+
+10、[Polycompiler](https://github.com/EvanZhouDev/polycompiler)
+
+一个有意思的项目，可以把 JS 脚本和 Python 脚本打包成一个脚本，同时能在 JS 环境和 Python 环境运行。
+
+## 资源
+
+1、[gpcb.net](https://gpcb.net/net/)
+
+![](https://cdn.beekka.com/blogimg/asset/202609/bg2026091620.webp)
+
+网络设备拓扑图的网页设计工具。（[@abpyu](https://github.com/ruanyf/weekly/issues/11622) 投稿）
+
+2、[视觉风格图鉴](https://ruanyf.github.io/squoosh/editor)
+
+![](https://cdn.beekka.com/blogimg/asset/202609/bg2026091309.webp)
+
+用一颗苹果，展示100多种视觉风格，比如上图是霓虹风格的苹果。（[@jerrymakes](https://github.com/ruanyf/weekly/issues/11555) 投稿）
+
+3、[AI IP 检测](https://store.xiu.ai/zh/ai-ip/)
+
+![](https://cdn.beekka.com/blogimg/asset/202609/bg2026091407.webp)
+
+这个网站显示你连接 Claude、ChatGPT、Grok、Perplexity、Cloudflare 时，实际连接的 IP 地址。（[@MuduiClaw](https://github.com/ruanyf/weekly/issues/11571) 投稿）
+
+4、[引力](https://qunabu.github.io/Gravity/#what-is-gravity)（Gravity）
+
+![](https://cdn.beekka.com/blogimg/asset/202606/bg2026062007.webp)
+
+一个网页的多媒体教程，向观众介绍万有引力的相关知识。
+
+## 图片
+
+1、[F-35 头盔](https://www.instagram.com/p/DJPerYryd3P/)
+
+世界最贵的头盔是美国战斗机 F-35 的飞行员头盔，价值40万美元一个（约人民币300万）。
+
+![](https://cdn.beekka.com/blogimg/asset/202505/bg2025050905.webp)
+
+它那么贵的原因，在于可以连接飞机的传感器，接受和处理各种数据。
+
+![](https://cdn.beekka.com/blogimg/asset/202505/bg2025050906.webp)
+
+它内置一个360度显示屏，为飞行员提供夜视、飞行数据（下图）。
+
+![](https://cdn.beekka.com/blogimg/asset/202505/bg2025050907.webp)
+
+每个头盔都是 3D 扫描定制的，由碳纤维、凯夫拉纤维和各种光学元件制成。
+
+2、[苏联 Mi-6 直升机](https://www.twz.com/news-features/the-story-of-the-monster-mi-6-helicopter-airliner)
+
+苏联的航空公司曾经设想，使用直升机运送乘客。
+
+上个世纪60年代，他们生产了一种当时世界上最大的直升机 Mi-6，可以乘坐80名乘客。
+
+![](https://cdn.beekka.com/blogimg/asset/202407/bg2024071115.webp)
+
+![](https://cdn.beekka.com/blogimg/asset/202407/bg2024071116.webp)
+
+它长约33米，高10米。内部每排可以坐5个人，甚至还有厕所。
+
+![](https://cdn.beekka.com/blogimg/asset/202407/bg2024071117.webp)
+
+这种飞机只造过一架，用来运送乘客到苏联东部地区，进行石油和天然气工作。
+
+![](https://cdn.beekka.com/blogimg/asset/202407/bg2024071118.webp)
+
+## 文摘
+
+1、[糊状千层面](https://underreacted.leaflet.pub/3mdjygm2p5s2c)
+
+实话实说，现实中，大多数程序员的代码其实都很糟糕。
+
+但是，糟糕的垃圾也分等级。一种情况是代码就像意大利面条（Spaghetti code），乱成一团，根本理不清。
+
+![](https://cdn.beekka.com/blogimg/asset/202609/bg2026090704.webp)
+
+好一点的情况是“[糊状千层面](https://underreacted.leaflet.pub/3mdjygm2p5s2c)”（slop lasagna）。这种代码也是糊在一起，但分成了很多层，至少可以按着层把它分开。
+
+![](https://cdn.beekka.com/blogimg/asset/202609/bg2026090703.webp)
+
+即使无法写出优秀出众的代码，**你也要尽量避免意大利面式代码，争取写出千层面式代码**。
+
+一个实例就是 React 框架，它把代码拆分成组件，这样的好处就是，哪怕每个组件都是垃圾代码，至少可以单独替换某个组件。
+
+删除组件、复制组件、内联组件、重写组件都是很容易的操作。因为组件之间是分离的，它让你只需关注**单个组件**的内部代码。
+
+只要你的组件树的设计是合理的，那么单个组件内部的具体代码就无关紧要。某人写了一个10000行的垃圾组件，哪有什么关系呢，最终有人会重写它，它影响不到代码库的其他部分。
+
+**只要代码是千层面结构，那么单独一层很糟糕，并不影响全局**。
+
+真正重要的是下面的事情。
+
+（1）数据如何在系统中流动，当前的数据从哪里输入，又输出了什么，以及你存储了哪些数据。
+
+（2）用户体验如何，有没有明显的漏洞、糟糕的性能、前后不一致的行为。
+
+（3）基本的抽象概念是否正确，有没有误用。
+
+**只要上面三点 OK ，代码又是组件式的可抽换结构，那么程序就没有大的问题**。这时，某个组件是否冗长、写得好不好、是否简洁合理，有没有小 Bug，其实无关大局。
+
+## 言论
+
+1、
+
+卫星会消耗行星的自转能量，从而加速行星的毁灭。
+
+-- [《金星吞噬了自己的卫星吗》](https://www.space.com/astronomy/venus/did-venus-eat-its-own-moon)
+
+2、
+
+想象两家非常相似的软件公司，收入相似，软件产品也相似。它们唯一的区别是，A 公司使用了 100 万行代码，而 B 公司使用了 10 万行代码。哪家公司会表现更好 ？
+
+显然，代码行数只有别人十分之一的公司会表现更好。代码行数越少，就能更快地理解和修改代码。
+
+-- [《代码就是债务》](https://tornikeo.com/code-is-debt/)
+
+3、
+
+大模型会将你从一个编写代码的程序员，转变为一个管理上下文、剔除无关信息、编写详细提示词的程序员。
+
+-- [Liz Fong-Jones](https://simonwillison.net/2025/Dec/30/liz-fong-jones/)
+
+4、
+
+一位创始人，如果在2024年组建了合适的团队却打造了错误的产品，那么坚持到2027年，他的团队就会变成久经沙场的团队，很可能打造出正确的产品。
+
+失败带来的经验，就像根系中的养分被储存起来，等待下一个春天的到来，而不是白白浪费。
+
+-- [《AI 不会崩溃，但会经历一场风暴》](https://ceodinner.substack.com/p/the-ai-wildfire-is-coming-its-going)
+
+5、
+
+很多技术出错，并不是太大的问题。GPS 出错，我很快会发现地点不对；Netflix 推荐的电影不好看，我就不看了。
+
+但 AI 就不同了，它越先进，就越难知道它是否出错，因为我们会用 AI 去完成那些我们自己无法完成、也无法验证的任务。
+
+一旦 AI 出错，我们只能不停召唤更强大 的 AI，希望咒语能够奏效。欢迎来到魔法师时代。
+
+-- [《AI 就是与魔法师合作》](https://www.oneusefulthing.org/p/on-working-with-wizards)
+
+## 往年回顾
+
+[旧金山疯狂的 AI 广告](https://www.ruanyifeng.com/blog/2025/09/weekly-issue-366.html)（#366）
+
+[你一生的故事](https://www.ruanyifeng.com/blog/2024/09/weekly-issue-316.html)（#316）
+
+[自己做双语 EPUB 电子书](https://www.ruanyifeng.com/blog/2023/08/weekly-issue-266.html)（#266）
+
+[极简主义的胜利](https://www.ruanyifeng.com/blog/2022/07/weekly-issue-216.html)（#216）
+
+（完）
+

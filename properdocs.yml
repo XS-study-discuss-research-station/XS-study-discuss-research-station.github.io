@@ -285,7 +285,7 @@ extra: # 额外设定
       （您稍后仍可以在网页左下角重新修改 cookies 设置）
 
 extra_javascript:
-  - js/click-colorful.js # 鼠标点击效果
+#  - js/click-colorful.js # 鼠标点击效果
   - js/shortcuts.js # 绑定左右键换页的键盘快捷键
   - js/katex.js # 数学表达式
   - js/thebe.js # Thebe 实时运行环境
@@ -304,8 +304,8 @@ extra_javascript:
   - https://unpkg.com/d3@latest/dist/d3.min.js # markmap 运行环境
   - https://unpkg.com/markmap-lib@latest/dist/browser/index.iife.js # markmap 运行环境
   - https://unpkg.com/markmap-view@latest/dist/browser/index.js # markmap 运行环境
-  - https://unpkg.com/oh-my-live2d@latest
-  - js/oml2d.js # 看板娘配置
+#  - https://unpkg.com/oh-my-live2d@latest
+#  - js/oml2d.js # 看板娘配置
 
 extra_css:
   - css/extra.css # 加载自定义的样式
