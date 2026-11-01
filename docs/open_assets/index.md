@@ -25,6 +25,12 @@ icon: material/folder-open
 
     各种游戏资源。
 
+-   [上海八年级数学 | 上海数学研究](https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&__biz=MzU2MTk2NDA1Nw==&scene=1&album_id=2647282422044180481&count=3#wechat_redirect )
+
+    ---
+
+    上海八年级数学 | 上海数学研究
+
 -   :material-tools: [**设计模式**](./design-pattern/index.md)<small>（🚧施工中）</small>
 
     ---

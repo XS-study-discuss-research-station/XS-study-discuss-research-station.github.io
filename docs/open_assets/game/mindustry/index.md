@@ -7,11 +7,11 @@ icon: material/alpha-m
 
 这里提供mindustry的最新可行版本（即说起来新但不是很新的版本）,重要内容将以 _斜体_ 标出
 
-__最新版本__：8.160.5 __日期__：2026.9.20
+__最新版本__：8.160.7 __日期__：2026.10.8
 
 __当前版本__：8.160 __日期__：2026.9.11
 
-## [v8 Build 159](https://github.com/Anuken/Mindustry/releases/tag/v159)
+## [v8 Build 160](https://github.com/Anuken/Mindustry/releases/tag/v159)
 
 __日期__：2026.9.11     [下载客户端](https://gh.tinylake.top/https://github.com/Anuken/Mindustry/releases/download/v160/Mindustry.jar)     [下载服务端](https://gh.tinylake.top/https://github.com/Anuken/Mindustry/releases/download/v160/server-release.jar)
 
